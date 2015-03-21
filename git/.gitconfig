@@ -1,0 +1,26 @@
+[user]
+        name = John Pinkerton
+        email = jpinkerton88@gmail.com
+[github]
+        user = johnthepink
+        token =
+[color]
+        ui = true
+[alias]
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        s = status -s
+        st = status
+        a = add
+        c = commit -m
+        co = checkout
+        b = branch
+[push]
+        default = simple
+[filter "media"]
+        clean = git media clean %f
+        smudge = git media smudge %f
+        required = true
+[pull]
+        rebase = true
+[rerere]
+        enabled = true
