@@ -112,8 +112,8 @@ bind down:${hyper}     focus down
 bind b:${hyper} focus ${browser}
 bind x:${hyper} focus 'Xcode'
 bind g:${hyper} focus 'GitHub'
-bind e:${hyper} focus 'Mailbox (Beta)'
-bind i:${hyper} focus 'iTerm'
+bind e:${hyper} focus 'Boxy'
+bind i:${hyper} focus 'iTerm2'
 bind m:${hyper} focus 'Messages'
 bind t:${hyper} focus 'Tweetbot'
 bind c:${hyper} focus 'Calendar'
