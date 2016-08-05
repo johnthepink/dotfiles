@@ -1,0 +1,8 @@
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Slava/vim-spacebars'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'Shougo/vimproc.vim'
