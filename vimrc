@@ -8,134 +8,14 @@ endif
 " don't bother with vi compatibility
 set nocompatible
 
+" plugins
+source ./vim-plugins
 
-" required
-set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim/
-
-" required
-call dein#begin(expand('~/.vim'))
-let pluginsExist = 0
-
-call dein#add('Shougo/dein.vim')
-call dein#add('VundleVim/Vundle.vim')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('altercation/vim-colors-solarized')
-call dein#add('austintaylor/vim-indentobject')
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('juvenn/mustache.vim')
-call dein#add('kchmck/vim-coffee-script')
-call dein#add('ctrlpvim/ctrlp.vim')
-call dein#add('leafgarland/typescript-vim')
-call dein#add('majutsushi/tagbar')
-call dein#add('rking/ag.vim')
-call dein#add('garbas/vim-snipmate')
-call dein#add('MarcWeber/vim-addon-mw-utils')
-call dein#add('tomtom/tlib_vim')
-call dein#add('nathanaelkane/vim-indent-guides')
-call dein#add('nono/vim-handlebars')
-call dein#add('pangloss/vim-javascript')
-call dein#add('scrooloose/nerdtree')
-call dein#add('scrooloose/syntastic')
-call dein#add('slim-template/vim-slim')
-call dein#add('tpope/vim-bundler')
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-cucumber')
-call dein#add('tpope/vim-dispatch')
-call dein#add('tpope/vim-endwise')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-pastie')
-call dein#add('tpope/vim-ragtag')
-call dein#add('tpope/vim-rails')
-call dein#add('tpope/vim-repeat')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-unimpaired')
-call dein#add('tpope/vim-vividchalk')
-call dein#add('eventualbuddha/vim-protobuf')
-call dein#add('vim-ruby/vim-ruby')
-call dein#add('vim-scripts/Align')
-call dein#add('vim-scripts/greplace.vim')
-call dein#add('vim-scripts/matchit.zip')
-call dein#add('terryma/vim-multiple-cursors')
-call dein#add('Slava/vim-spacebars')
-call dein#add('digitaltoad/vim-jade')
-call dein#add('othree/yajs.vim')
-call dein#add('mxw/vim-jsx')
-call dein#add('wakatime/vim-wakatime')
-call dein#add('Quramy/tsuquyomi')
-call dein#add('Shougo/vimproc.vim')
-call dein#add('mhartington/oceanic-next')
-call dein#add('vim-airline/vim-airline')
-call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('mattn/webapi-vim')
-call dein#add('mattn/gist-vim')
-call dein#add('tmux-plugins/vim-tmux')
-call dein#add('tmux-plugins/vim-tmux-focus-events')
-call dein#add('rhysd/github-complete.vim')
-call dein#add('junegunn/goyo.vim')
-
-if dein#check_install()
-  call dein#install()
-endif
-call dein#end()
-
-" enable syntax highlighting
-syntax enable
-
-" configure Vundle
-filetype on " without this vim emits a zero exit status, later, because of :ft off
-filetype off
-
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
-
-set autoindent
-set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
-set backspace=2                                              " Fix broken backspace in some setups
-set backupcopy=yes                                           " see :help crontab
-set clipboard=unnamed                                        " yank and paste with the system clipboard
-set directory-=.                                             " don't store swapfiles in the current directory
-set encoding=utf-8
-set expandtab                                                " expand tabs to spaces
-set ignorecase                                               " case-insensitive search
-set incsearch                                                " search as you type
-set laststatus=2                                             " always show statusline
-set list                                                     " show trailing whitespace
-set listchars=tab:▸\ ,trail:▫
-set number                                                   " show line numbers
-set ruler                                                    " show where you are
-set scrolloff=3                                              " show context above/below cursorline
-set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
-set showcmd
-set smartcase                                                " case-sensitive search if any caps
-set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-set tabstop=2
-set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
-set wildmenu                                                 " show a navigable menu for tab completion
-set wildmode=longest,list,full
-
-" Enable basic mouse behavior such as resizing buffers.
-set mouse=a
-if exists('$TMUX')  " Support resizing in tmux
-  set ttymouse=xterm2
-endif
+" settings
+source ./vim-settings
 
 " keyboard shortcuts
-let mapleader = ','
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <leader>l :Align
-nnoremap <leader>a :Ag<space>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+source ./vim-shortcuts
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
