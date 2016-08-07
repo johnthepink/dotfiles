@@ -167,3 +167,42 @@ nnoremap Q <nop>
 " recording macros is not my thing
 map q <Nop>
 
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" linting
+let g:neomake_warning_sign = {'text': '?', 'texthl': 'NeomakeWarningSign'}
+function! neomake#makers#ft#typescript#tsc()
+  return {
+      \ 'args': [
+          \ '--noEmit'
+      \ ],
+      \ 'errorformat':
+          \ '%f %#(%l\,%c): error %m,'
+      \ }
+endfunction
+
+
+let g:neomake_typescript_tslint = {
+  \ 'args': ['%:p', '--format verbose'],
+  \ 'errorformat': 'f:%l:%c: %m'
+  \ }
+
+
+let g:neomake_open_list = 2
+
+let g:neomake_markdown_alex_maker = {
+  \ 'exe': 'alex',
+  \ 'errorformat': '%f: line %l\, col %c\, %m',
+  \ }
+let g:neomake_markdown_enabled_makers = ['alex']
+
+autocmd! BufWritePost * Neomake
+
+function! JscsFix()
+  let l:winview = winsaveview()
+  % ! jscs -x
+  call winrestview(l:winview)
+endfunction
+command JscsFix :call JscsFix()
+noremap <leader>j :JscsFix<CR>
