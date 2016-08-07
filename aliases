@@ -1,3 +1,4 @@
 alias t="tmux"
 alias ta="tmux attach -t"
 alias git=hub
+alias v="nvim"

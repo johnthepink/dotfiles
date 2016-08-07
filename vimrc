@@ -8,6 +8,9 @@ endif
 " don't bother with vi compatibility
 set nocompatible
 
+" true colors
+set termguicolors
+
 " plugins
 source $HOME/dotfiles/vim-plugins
 
@@ -70,14 +73,11 @@ inoremap jj <ESC>
 "set hlsearch
 "nmap <leader>hl :let @/ = ""<CR>
 
-" gui settings
-if (&t_Co == 256 || has('gui_running'))
-  if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme OceanicNext
-  else
-    colorscheme desert
-  endif
-endif
+" theme
+" enable syntax highlighting
+syntax on
+colorscheme OceanicNext
+set background=dark
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
