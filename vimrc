@@ -9,13 +9,13 @@ endif
 set nocompatible
 
 " plugins
-source ./vim-plugins
+source $HOME/dotfiles/vim-plugins
 
 " settings
-source ./vim-settings
+source $HOME/dotfiles/vim-settings
 
 " keyboard shortcuts
-source ./vim-shortcuts
+source $HOME/dotfiles/vim-shortcuts
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
