@@ -10,6 +10,8 @@ set nocompatible
 
 " true colors
 set termguicolors
+" change to blinking cursor in insert mode
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " plugins
 source $HOME/dotfiles/vim-plugins
@@ -67,7 +69,7 @@ vnoremap p "_dP
 set nocursorline " don't highlight current line
 
 " keyboard shortcuts
-inoremap jj <ESC>
+" inoremap jj <ESC>
 
 " highlight search
 "set hlsearch
@@ -78,6 +80,12 @@ inoremap jj <ESC>
 syntax on
 colorscheme OceanicNext
 set background=dark
+
+" enable italics, disabled by default
+let g:oceanic_next_terminal_italic = 1
+
+" enable bold, disabled by default
+let g:oceanic_next_terminal_bold = 1
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
@@ -138,25 +146,25 @@ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' 
 exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#141e23')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#141e23')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#141e23')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#141e23')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#141e23')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#141e23')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#141e23')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#141e23')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#141e23')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#141e23')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#141e23')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#141e23')
-call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', '#141e23')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#141e23')
-call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#141e23')
-call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#141e23')
-call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#141e23')
-call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#141e23')
-call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#141e23')
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#1b2b34')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#1b2b34')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#1b2b34')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#1b2b34')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#1b2b34')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#1b2b34')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#1b2b34')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#1b2b34')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#1b2b34')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#1b2b34')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#1b2b34')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#1b2b34')
+call NERDTreeHighlightFile('ts', 'Blue', 'none', '#6699cc', '#1b2b34')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#1b2b34')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#1b2b34')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#1b2b34')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#1b2b34')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#1b2b34')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#1b2b34')
 
 " jsx
 let g:jsx_ext_required = 0

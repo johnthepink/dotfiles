@@ -15,7 +15,7 @@ for file in ~/.{aliases,functions,keys,prompt}; do
 done
 unset file
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export SHELL="zsh"
 
 source ~/antigen/antigen.zsh
