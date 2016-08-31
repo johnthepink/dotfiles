@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/john/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # oh-my-zsh theme
 # ZSH_THEME="robbyrussell"
@@ -23,7 +23,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
-export NVM_DIR="/Users/john/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # setup gpg agent

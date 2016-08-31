@@ -14,13 +14,13 @@ set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " plugins
-source $HOME/dotfiles/vim-plugins
+source $HOME/.dotfiles/vim-plugins
 
 " settings
-source $HOME/dotfiles/vim-settings
+source $HOME/.dotfiles/vim-settings
 
 " keyboard shortcuts
-source $HOME/dotfiles/vim-shortcuts
+source $HOME/.dotfiles/vim-shortcuts
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -177,6 +177,10 @@ map q <Nop>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+" experimental javascript support for typescript deoplate
+let g:deoplete#sources#tss#javascript_support = 1
+" keep preview window closed
+set completeopt-=preview
 
 " linting
 let g:neomake_warning_sign = {'text': '?', 'texthl': 'NeomakeWarningSign'}
