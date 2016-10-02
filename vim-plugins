@@ -68,6 +68,7 @@ call dein#add('neomake/neomake')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('mhartington/deoplete-typescript')
 call dein#add('HerringtonDarkholme/yats.vim')
+call dein#add('steelsojka/deoplete-flow')
 
 if dein#check_install()
   call dein#install()

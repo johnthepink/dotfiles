@@ -182,6 +182,9 @@ let g:deoplete#sources#tss#javascript_support = 1
 " keep preview window closed
 set completeopt-=preview
 
+" set to global flow install
+let g:deoplete#sources#flow#flow_bin = 'flow'
+
 " linting
 let g:neomake_warning_sign = {'text': '?', 'texthl': 'NeomakeWarningSign'}
 function! neomake#makers#ft#typescript#tsc()
