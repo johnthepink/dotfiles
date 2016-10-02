@@ -12,7 +12,7 @@ hs.hotkey.bind(hyper, "V", function() hs.eventtap.keyStrokes(hs.pasteboard.getCo
 -- hotkeys for apps
 local focusKeys = {
   b="Google Chrome",
-  l="Dark Slack",
+  l="Slack",
   x="Xcode",
   e="Boxy",
   i="iTerm",
