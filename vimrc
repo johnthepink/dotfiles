@@ -187,19 +187,18 @@ let g:neomake_warning_sign = {'text': '?', 'texthl': 'NeomakeWarningSign'}
 function! neomake#makers#ft#typescript#tsc()
   return {
       \ 'args': [
-          \ '--noEmit'
+          \ '--project', "."
       \ ],
+      \ 'append_file': 0,
       \ 'errorformat':
           \ '%f %#(%l\,%c): error %m,'
       \ }
 endfunction
 
-
 let g:neomake_typescript_tslint = {
   \ 'args': ['%:p', '--format verbose'],
   \ 'errorformat': 'f:%l:%c: %m'
   \ }
-
 
 let g:neomake_open_list = 2
 
