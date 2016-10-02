@@ -182,8 +182,9 @@ let g:deoplete#sources#tss#javascript_support = 1
 " keep preview window closed
 set completeopt-=preview
 
-" set to global flow install
-let g:deoplete#sources#flow#flow_bin = 'flow'
+function! StrTrim(txt)
+  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+endfunction
 
 " linting
 let g:neomake_warning_sign = {'text': '?', 'texthl': 'NeomakeWarningSign'}
@@ -211,6 +212,8 @@ let g:neomake_markdown_alex_maker = {
   \ }
 let g:neomake_markdown_enabled_makers = ['alex']
 
+let g:neomake_javascript_eslint_exe = StrTrim(system('PATH=$(npm bin):$PATH && which eslint'))
+
 function! neomake#makers#ft#javascript#eslint()
   return {
     \ 'args': ['-f', 'compact'],
@@ -219,11 +222,9 @@ function! neomake#makers#ft#javascript#eslint()
     \ }
 endfunction
 
-function! StrTrim(txt)
-  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-endfunction
-
+" use flow from node_modules folder
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
+let g:deoplete#sources#flow#flow_bin = g:flow_path
 
 let g:neomake_javascript_flow_maker = {
     \ 'exe': 'sh',
