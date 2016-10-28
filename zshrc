@@ -33,3 +33,5 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
 else
   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
+export PATH="$HOME/.yarn/bin:$PATH"
