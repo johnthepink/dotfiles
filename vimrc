@@ -1,5 +1,4 @@
-
-" If vundle is not installed, do it first
+" If dein is not installed, do it first
 if (!isdirectory(expand("$HOME/.vim/repos/github.com/Shougo/dein.vim")))
   call system(expand("mkdir -p $HOME/.vim/repos/github.com"))
   call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.vim/repos/github.com/Shougo/dein.vim"))
@@ -79,7 +78,8 @@ set nocursorline " don't highlight current line
 " enable syntax highlighting
 syntax on
 colorscheme OceanicNext
-set background=dark
+" not needed anymore since oceanic next update
+" set background=dark
 
 " enable italics, disabled by default
 let g:oceanic_next_terminal_italic = 1
