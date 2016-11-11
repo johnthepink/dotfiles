@@ -35,3 +35,7 @@ else
 fi
 
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+# added by travis gem
+[ -f /Users/john.pinkerton/.travis/travis.sh ] && source /Users/john.pinkerton/.travis/travis.sh

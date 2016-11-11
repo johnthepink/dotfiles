@@ -13,13 +13,13 @@ set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " plugins
-source $HOME/.dotfiles/vim-plugins
+source $HOME/.dotfiles/vim-plugins.vim
 
 " settings
-source $HOME/.dotfiles/vim-settings
+source $HOME/.dotfiles/vim-settings.vim
 
 " keyboard shortcuts
-source $HOME/.dotfiles/vim-shortcuts
+source $HOME/.dotfiles/vim-shortcuts.vim
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
