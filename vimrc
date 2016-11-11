@@ -79,7 +79,7 @@ set nocursorline " don't highlight current line
 syntax on
 colorscheme OceanicNext
 " not needed anymore since oceanic next update
-" set background=dark
+set background=dark
 
 " enable italics, disabled by default
 let g:oceanic_next_terminal_italic = 1

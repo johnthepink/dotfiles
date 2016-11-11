@@ -15,5 +15,5 @@ nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call WhitespaceStripTrailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 " why is this happening?
-nnoremap <leader>z :AirlineTheme oceanicnext<CR>
+" nnoremap <leader>z :AirlineTheme oceanicnext<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
