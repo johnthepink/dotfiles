@@ -77,7 +77,7 @@ set nocursorline " don't highlight current line
 " theme
 " enable syntax highlighting
 syntax on
-colorscheme OceanicNext
+colorscheme oceanicnext
 " not needed anymore since oceanic next update
 set background=dark
 
