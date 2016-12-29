@@ -235,6 +235,9 @@ let g:neomake_javascript_flow_maker = {
 
 let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
+let g:neomake_ruby_enabled_makers = []
+
+let g:fugitive_gitlab_domains = ['http://lab.gracehill.com']
 
 autocmd! BufWritePost * Neomake
 

@@ -23,6 +23,7 @@ local focusKeys = {
   u="iTunes",
   y="Byword",
   o="1Password",
+  h="yakyak.app",
 }
 
 for key in pairs(focusKeys) do

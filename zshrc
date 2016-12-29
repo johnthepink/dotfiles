@@ -39,3 +39,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # added by travis gem
 [ -f /Users/john.pinkerton/.travis/travis.sh ] && source /Users/john.pinkerton/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(rbenv init -)"
+export PATH=~/Library/Python/2.7/bin:$PATH
