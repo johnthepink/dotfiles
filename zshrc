@@ -30,6 +30,8 @@ export NVM_DIR="$HOME/.nvm"
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   source ~/.gnupg/.gpg-agent-info
   export GPG_AGENT_INFO
+  GPG_TTY=$(tty)
+  export GPG_TTY
 else
   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
@@ -41,5 +43,4 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 [ -f /Users/john.pinkerton/.travis/travis.sh ] && source /Users/john.pinkerton/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-eval "$(rbenv init -)"
 export PATH=~/Library/Python/2.7/bin:$PATH
