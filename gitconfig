@@ -1,7 +1,7 @@
 [user]
         name = John Pinkerton
         email = jpinkerton88@gmail.com
-	signingkey = 99DE08F3
+        signingkey = 99DE08F3
 [github]
         user = johnthepink
 [color]
@@ -11,7 +11,7 @@
         s = status -s
         st = status
         a = add
-        c = commit -S -m
+        c = commit -m
         co = checkout
         b = branch
 [push]
@@ -27,4 +27,6 @@
 [credential]
         helper = osxkeychain
 [commit]
-	gpgsign = true
+        gpgsign = true
+[gpg]
+        program = gpg2
