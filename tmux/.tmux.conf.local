@@ -1,7 +1,0 @@
-# Add your local tmux config here
-
-# spotify
-set -g status-right '#(tmux-spotify-info)'
-
-# javascript rendering issue
-set-window-option -g utf8 on
