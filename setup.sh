@@ -50,6 +50,7 @@ brew install gpg gpg-agent pinentry-mac
 echo "installing tmux"
 brew install tmux
 mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "installing pythons"
 brew install python python3
