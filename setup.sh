@@ -22,6 +22,7 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
+touch ~/.zshrc.local
 
 echo "symlinking karabiner config"
 mkdir -p ~/.config/karabiner
