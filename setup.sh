@@ -33,7 +33,7 @@ mkdir -p ~/.config/nvim
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 
 echo "symlinking hammerspoon config"
-mkdir .hammerspoon
+mkdir ~/.hammerspoon
 ln -sf ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 echo "symlinking gpg config"
