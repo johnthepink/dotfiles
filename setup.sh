@@ -9,6 +9,10 @@ xcode-select --install
 echo "install ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+echo "install antigen"
+mkdir ~/.antigen
+curl https://cdn.rawgit.com/zsh-users/antigen/v1.4.1/bin/antigen.zsh > ~/.antigen/antigen.zsh
+
 echo "symlinking main files"
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
