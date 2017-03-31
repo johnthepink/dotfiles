@@ -14,6 +14,10 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call WhitespaceStripTrailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
-" why is this happening?
-" nnoremap <leader>z :AirlineTheme oceanicnext<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+nmap <silent> <leader>z :TestNearest<CR>
+nmap <silent> <leader>x :TestFile<CR>
+" nmap <silent> <leader>a :TestSuite<CR>
+" nmap <silent> <leader>l :TestLast<CR>
+" nmap <silent> <leader>g :TestVisit<CR>
