@@ -239,7 +239,8 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = []
 
-let g:fugitive_gitlab_domains = ['http://lab.gracehill.com']
+" let g:fugitive_gitlab_domains = ['http://lab.gracehill.com']
+let test#strategy = 'neovim'
 
 autocmd! BufWritePost * Neomake
 
