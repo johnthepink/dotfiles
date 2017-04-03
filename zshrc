@@ -26,7 +26,7 @@ antigen apply
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$(yarn global bin):$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # added by travis gem
