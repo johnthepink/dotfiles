@@ -36,6 +36,7 @@ call dein#add('moll/vim-node', {'on_ft':['javascript', 'typescript']})
 call dein#add('elzr/vim-json', {'on_ft': 'json'})
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
+call dein#add('fleischie/vim-styled-components')
 
 call dein#add('hail2u/vim-css3-syntax', {'on_ft':['css','scss']})
 call dein#add('ap/vim-css-color', {'on_ft': ['css', 'scss', 'yaml']})
