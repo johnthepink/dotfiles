@@ -42,10 +42,12 @@ call dein#add('fleischie/vim-styled-components')
 call dein#add('hail2u/vim-css3-syntax', {'on_ft':['css','scss']})
 call dein#add('ap/vim-css-color', {'on_ft': ['css', 'scss', 'yaml']})
 
+call dein#add('othree/html5.vim')
+
 call dein#add('wakatime/vim-wakatime')
 call dein#add('Quramy/tsuquyomi')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('mhartington/oceanic-next', { 'rev': 'b938fbcfdf6d66ffc9b9eb945de8b3629c634f65' })
+call dein#add('trevordmiller/nova-vim')
 call dein#add('vim-airline/vim-airline')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 call dein#add('mattn/webapi-vim')

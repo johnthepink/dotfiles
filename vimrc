@@ -78,7 +78,7 @@ set nocursorline " don't highlight current line
 " theme
 " enable syntax highlighting
 syntax on
-colorscheme oceanicnext
+colorscheme nova
 " not needed anymore since oceanic next update
 set background=dark
 
@@ -120,7 +120,7 @@ set hidden
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='oceanicnext'
+" let g:airline_theme='oceanicnext'
 " let g:airline_theme='base16_solarized'
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 " nmap <leader>t :term<cr>
