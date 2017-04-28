@@ -80,7 +80,7 @@ set nocursorline " don't highlight current line
 syntax on
 colorscheme nova
 " not needed anymore since oceanic next update
-set background=dark
+" set background=dark
 
 " enable italics, disabled by default
 let g:oceanic_next_terminal_italic = 1
@@ -267,3 +267,5 @@ endfunction
 augroup whitespace
   autocmd BufWritePre *.rb call WhitespaceStripTrailing()
 augroup END
+
+colorscheme nova
