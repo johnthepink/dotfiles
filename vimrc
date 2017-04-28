@@ -10,7 +10,8 @@ set nocompatible
 " true colors
 set termguicolors
 " change to blinking cursor in insert mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+" no longer works as of neovim 0.2
+" let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " plugins
 source $HOME/.dotfiles/vim-plugins.vim
