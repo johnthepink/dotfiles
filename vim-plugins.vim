@@ -65,6 +65,8 @@ call dein#add('HerringtonDarkholme/yats.vim')
 call dein#add('steelsojka/deoplete-flow')
 call dein#add('fishbullet/deoplete-ruby')
 
+call dein#add('fgsch/vim-varnish')
+
 call dein#add('janko-m/vim-test')
 
 if dein#check_install()
