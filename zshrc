@@ -35,6 +35,9 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=~/Library/Python/2.7/bin:$PATH
 
+# go bin path
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 # Add the following to your shell init to set up gpg-agent automatically for every shell
 if ! [ -n "$(pgrep gpg-agent)" ]; then
   eval $(gpg-agent --daemon)

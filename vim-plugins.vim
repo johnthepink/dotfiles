@@ -69,6 +69,8 @@ call dein#add('fgsch/vim-varnish')
 
 call dein#add('janko-m/vim-test')
 
+call dein#add('hashivim/vim-terraform')
+
 if dein#check_install()
   call dein#install()
 endif
