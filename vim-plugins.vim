@@ -71,6 +71,8 @@ call dein#add('janko-m/vim-test')
 
 call dein#add('hashivim/vim-terraform')
 
+call dein#add('digitaltoad/vim-pug')
+
 if dein#check_install()
   call dein#install()
 endif
