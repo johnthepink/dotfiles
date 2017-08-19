@@ -2,7 +2,7 @@
     "usageCount": 0, 
     "omitTrigger": false, 
     "prompt": false, 
-    "description": "up", 
+    "description": "refresh", 
     "abbreviation": {
         "wordChars": "[\\w]", 
         "abbreviations": [], 
@@ -12,14 +12,10 @@
         "triggerInside": false
     }, 
     "hotkey": {
-        "hotKey": "p", 
-        "modifiers": [
-            "<ctrl>"
-        ]
+        "hotKey": null, 
+        "modifiers": []
     }, 
-    "modes": [
-        3
-    ], 
+    "modes": [], 
     "showInTrayMenu": false, 
     "filter": {
         "regex": null, 
