@@ -269,3 +269,5 @@ augroup whitespace
 augroup END
 
 colorscheme nova
+
+hi Comment gui=italic ctermfg=11
