@@ -1,0 +1,114 @@
+set imap_user = "jpinkerton88@gmail.com"
+# .muttrc.local
+# set imap_pass = ""
+
+set folder = "imaps://imap.gmail.com"
+set spoolfile = "+INBOX"
+set postponed="+[Gmail]/Drafts"
+
+set ssl_force_tls = yes
+set ssl_starttls = no
+
+set copy = no
+
+# Outgoing
+set smtp_url = "smtps://jpinkerton88@gmail.com@smtp.gmail.com"
+# .muttrc.local
+# set smtp_pass = ""
+
+# Identity
+set realname = "John Pinkerton"
+set from = "jpinkerton88@gmail.com"
+
+# Editor
+set edit_headers
+set text_flowed
+set tmpdir="~/.mutt"
+
+# Message formatting
+alternative_order text/plain text/html
+auto_view text/html
+set pipe_decode
+set print_decode
+set print_command='muttprint -P letter -F Helvetica -p TO_FILE:$HOME/mail.ps'
+
+# Index interface
+set mail_check=5
+set timeout=10
+unset mark_old
+set thorough_search
+set quit
+set menu_scroll
+set include
+set fast_reply
+bind index G last-entry
+bind index g noop
+bind index gg first-entry
+bind index R group-reply
+bind index <space> collapse-thread
+bind index V collapse-all
+bind index \cU half-up
+bind index \cD half-down
+bind index \cB previous-page
+bind index \cF next-page
+macro index e "<save-message>=[Gmail]/All Mail<enter>"
+macro index d "<save-message>=[Gmail]/Trash<enter>"
+macro index a "<limit>~A<enter>"
+macro index i "<limit>~U | ~F<enter>"
+macro index I "<limit>~U<enter>"
+set sort="threads"
+set sort_aux="reverse-last-date-received"
+set strict_threads
+set narrow_tree
+unset confirmappend
+unset collapse_unread
+unset help
+set delete="yes"
+
+# mu search
+unset wait_key
+macro index S "<save-message>"
+macro index s "<shell-escape>mufind "
+macro index gs "<change-folder-readonly>~/.search<enter>"
+
+# Index style
+set date_format="%Y-%m-%d"
+set index_format="%D %Z %-15.15L %s"
+color index white black ~A # read
+color index green black ~U # unread
+color indicator black white
+color tree yellow yellow
+color index green green "~v~(~U)"
+color status white magenta
+
+# Message style
+color normal white black
+color quoted yellow black
+color signature cyan black
+color hdrdefault cyan black
+color tilde white black
+color search white black
+
+# Pager interface
+set pager_stop
+unset markers
+bind pager g noop
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+bind pager j next-line
+bind pager k previous-line
+bind pager \Cu half-up
+bind pager \Cd half-down
+bind pager \Cf next-page
+bind pager \Cb previous-page
+bind pager <space> next-page
+bind pager <backspace> previous-page
+macro pager e "<save-message>=[Gmail]/All Mail<enter>"
+macro pager d "<save-message>=[Gmail]/Trash<enter>"
+
+# Editor interface
+bind editor <space> noop
+
+# Load local config file for local overrides
+source `x=~/.muttrc.local; if [ -e "$x" ]; then echo "$x"; fi; echo /dev/null`
