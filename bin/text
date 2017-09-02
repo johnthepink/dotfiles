@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# set in local config
+# TEXT_TOPIC_ARN=""
+# TEXT_AWS_PROFILE=""
+
+MESSAGE=$@
+TMP_FILE="$(dirname $0)/message.txt"
+TMP_FILE_URI="file://$TMP_FILE"
+
+echo $MESSAGE > $TMP_FILE
+
+aws sns publish \
+  --topic-arn $TEXT_TOPIC_ARN \
+  --message $TMP_FILE_URI \
+  --profile $TEXT_AWS_PROFILE
+
+rm $TMP_FILE
+
+exit
