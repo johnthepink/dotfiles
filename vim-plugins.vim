@@ -73,6 +73,8 @@ call dein#add('hashivim/vim-terraform')
 
 call dein#add('digitaltoad/vim-pug')
 
+call dein#add('jparise/vim-graphql')
+
 if dein#check_install()
   call dein#install()
 endif

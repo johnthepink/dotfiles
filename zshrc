@@ -52,3 +52,19 @@ $HOME/.dotfiles/xcape.sh
 
 # local settings
 source $HOME/.zshrc.local
+
+# added by travis gem
+[ -f /home/john/.travis/travis.sh ] && source /home/john/.travis/travis.sh
+
+PATH="/home/john/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/john/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/john/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/john/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/john/perl5"; export PERL_MM_OPT;
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/john/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/john/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/john/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/john/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh

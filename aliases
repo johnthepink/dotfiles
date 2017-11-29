@@ -5,3 +5,6 @@ alias git=hub
 alias v="nvim"
 alias v.="v ."
 alias open="xdg-open"
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'

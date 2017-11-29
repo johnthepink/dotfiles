@@ -205,7 +205,7 @@ let g:neomake_typescript_tslint = {
   \ 'errorformat': 'f:%l:%c: %m'
   \ }
 
-let g:neomake_open_list = 2
+" let g:neomake_open_list = 2
 
 let g:neomake_markdown_alex_maker = {
   \ 'exe': 'alex',
@@ -234,11 +234,11 @@ let g:neomake_javascript_flow_maker = {
     \ 'cwd': '%:p:h'
     \ }
 
-" let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-" let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_ruby_enabled_makers = []
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_ruby_enabled_makers = ['rubocop']
 
 " let g:fugitive_gitlab_domains = ['http://lab.gracehill.com']
 let test#strategy = 'neovim'

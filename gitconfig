@@ -83,3 +83,5 @@
         gpgsign = true
 [gpg]
         program = gpg
+[core]
+	excludesfiles = /home/john/.gitignore_global
