@@ -47,9 +47,6 @@ if ! [ -n "$(pgrep gpg-agent)" ]; then
   eval $(gpg-agent --daemon)
 fi
 
-# key remap
-$HOME/.dotfiles/xcape.sh
-
 # local settings
 source $HOME/.zshrc.local
 
