@@ -69,6 +69,7 @@
         c = commit -m
         co = checkout
         b = branch
+        root = rev-parse --show-toplevel
 [push]
         default = simple
 [filter "media"]
