@@ -71,6 +71,14 @@ call dein#add('janko-m/vim-test')
 
 call dein#add('hashivim/vim-terraform')
 
+call dein#add('reasonml-editor/vim-reason-plus')
+call dein#add('junegunn/fzf')
+call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
+call dein#add('jparise/vim-graphql')
+
 if dein#check_install()
   call dein#install()
 endif

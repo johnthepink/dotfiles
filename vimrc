@@ -240,8 +240,13 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = []
 
-" let g:fugitive_gitlab_domains = ['http://lab.gracehill.com']
 let test#strategy = 'neovim'
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['/Users/john/.dotfiles/bin/reason-language-server.exe'],
+    \ }
 
 autocmd! BufWritePost * Neomake
 
