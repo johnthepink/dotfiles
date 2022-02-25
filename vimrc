@@ -181,74 +181,42 @@ let g:deoplete#enable_at_startup = 1
 " experimental javascript support for typescript deoplate
 let g:deoplete#sources#tss#javascript_support = 1
 " keep preview window closed
-set completeopt-=preview
+" set completeopt-=preview
+set completeopt=menu
 
 function! StrTrim(txt)
   return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 endfunction
 
 " linting
-let g:neomake_warning_sign = {'text': '?', 'texthl': 'NeomakeWarningSign'}
-function! neomake#makers#ft#typescript#tsc()
-  return {
-      \ 'args': [
-          \ '--project', "."
-      \ ],
-      \ 'append_file': 0,
-      \ 'errorformat':
-          \ '%f %#(%l\,%c): error %m,'
-      \ }
-endfunction
-
-let g:neomake_typescript_tslint = {
-  \ 'args': ['%:p', '--format verbose'],
-  \ 'errorformat': 'f:%l:%c: %m'
-  \ }
-
-let g:neomake_open_list = 2
-
-let g:neomake_markdown_alex_maker = {
-  \ 'exe': 'alex',
-  \ 'errorformat': '%f: line %l\, col %c\, %m',
-  \ }
-let g:neomake_markdown_enabled_makers = ['alex']
-
-let g:neomake_javascript_eslint_exe = StrTrim(system('PATH=$(npm bin):$PATH && which eslint'))
-
-function! neomake#makers#ft#javascript#eslint()
-  return {
-    \ 'args': ['-f', 'compact'],
-    \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
-    \ '%W%f: line %l\, col %c\, Warning - %m'
-    \ }
-endfunction
-
 " use flow from node_modules folder
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 let g:deoplete#sources#flow#flow_bin = g:flow_path
 
-let g:neomake_javascript_flow_maker = {
-    \ 'exe': 'sh',
-    \ 'args': ['-c', g:flow_path.' --json 2> /dev/null | flow-vim-quickfix'],
-    \ 'errorformat': '%E%f:%l:%c\,%n: %m',
-    \ 'cwd': '%:p:h'
-    \ }
+let g:ale_change_sign_column_color = 1
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['tslint']}
+let g:ale_completion_enabled = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\   'graphql': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
+\   'terraform': ['terraform'],
+\}
+let g:ale_fix_on_save = 1
 
-" let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-" let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_ruby_enabled_makers = []
+" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --tab-width 4'
+
+nnoremap <leader>a :Ag<space>
 
 let test#strategy = 'neovim'
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
 let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/Users/john/.dotfiles/bin/reason-language-server.exe'],
+    \ 'reason': ['/Users/john/.dotfiles/bin/reason-language-server'],
     \ }
-
-autocmd! BufWritePost * Neomake
 
 function! JscsFix()
   let l:winview = winsaveview()
@@ -272,5 +240,10 @@ endfunction
 augroup whitespace
   autocmd BufWritePre *.rb call WhitespaceStripTrailing()
 augroup END
+
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <silent> g<cr> :call LanguageClient_textDocument_hover()<cr>
+set rtp+=/usr/local/opt/fzf
 
 colorscheme nova

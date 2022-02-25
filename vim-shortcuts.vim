@@ -9,7 +9,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>c :noh<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>t :GFiles<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call WhitespaceStripTrailing()<CR>
@@ -21,3 +21,5 @@ nmap <silent> <leader>x :TestFile<CR>
 " nmap <silent> <leader>a :TestSuite<CR>
 " nmap <silent> <leader>l :TestLast<CR>
 " nmap <silent> <leader>g :TestVisit<CR>
+
+nnoremap gp :silent %!prettier --stdin-filepath %<CR>

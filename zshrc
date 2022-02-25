@@ -6,7 +6,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 # oh-my-zsh plugins
-plugins=(git osx hub)
+plugins=(
+  git
+  osx
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,10 +41,33 @@ export PATH=~/Library/Python/2.7/bin:$PATH
 # go bin path
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
+# my bin
+export PATH=$PATH:~/.dotfiles/bin
+
 # Add the following to your shell init to set up gpg-agent automatically for every shell
 if ! [ -n "$(pgrep gpg-agent)" ]; then
   eval $(gpg-agent --daemon)
 fi
 
+eval "`fnm env --use-on-cd`"
+
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+function v2g() {
+  ffmpeg -i "$1" -pix_fmt rgb8 -r 10 "$2" && gifsicle -O3 "$2" -o "$2"
+}
+
 # local settings
 source $HOME/.zshrc.local
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/john/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/john/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh

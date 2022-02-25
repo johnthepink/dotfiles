@@ -57,13 +57,16 @@ call dein#add('tmux-plugins/vim-tmux-focus-events')
 call dein#add('rhysd/github-complete.vim')
 call dein#add('junegunn/goyo.vim')
 
-call dein#add('neomake/neomake')
+" call dein#add('neomake/neomake')
+" call dein#add('w0rp/ale')
+call dein#add('dense-analysis/ale')
 
 call dein#add('Shougo/deoplete.nvim')
-call dein#add('mhartington/deoplete-typescript')
 call dein#add('HerringtonDarkholme/yats.vim')
-call dein#add('steelsojka/deoplete-flow')
-call dein#add('fishbullet/deoplete-ruby')
+" call dein#add('mhartington/deoplete-typescript')
+call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+" call dein#add('steelsojka/deoplete-flow')
+" call dein#add('fishbullet/deoplete-ruby')
 
 call dein#add('fgsch/vim-varnish')
 
@@ -71,13 +74,30 @@ call dein#add('janko-m/vim-test')
 
 call dein#add('hashivim/vim-terraform')
 
+call dein#add('cespare/vim-toml')
+
 call dein#add('reasonml-editor/vim-reason-plus')
-call dein#add('junegunn/fzf')
+call dein#add('/usr/local/opt/fzf')
+call dein#add('junegunn/fzf.vim')
 call dein#add('autozimu/LanguageClient-neovim', {
     \ 'rev': 'next',
     \ 'build': 'bash install.sh',
     \ })
 call dein#add('jparise/vim-graphql')
+call dein#add('pantharshit00/vim-prisma')
+
+call dein#add('milch/vim-fastlane')
+
+call dein#add('mustache/vim-mustache-handlebars')
+
+" call dein#add('flowtype/vim-flow', {
+"     \ 'autoload': {
+"     \   'filetypes': 'javascript'
+"     \ },
+"     \ 'build': {
+"     \   'mac': 'npm install -g flow-bin',
+"     \   'unix': 'npm install -g flow-bin'
+"     \ }})
 
 if dein#check_install()
   call dein#install()
