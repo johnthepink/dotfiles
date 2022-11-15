@@ -15,7 +15,7 @@
         grep = auto
 
 [color "status"]
-        header = black bold
+        header = white bold
         branch = cyan
         nobranch = red
         unmerged = red
@@ -25,7 +25,7 @@
 
 [color "diff"]
         meta = red bold
-        frag = black bold
+        frag = white bold
         func = blue
         old = red strike
         new = green

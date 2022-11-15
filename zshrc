@@ -8,7 +8,7 @@ DISABLE_AUTO_TITLE="true"
 # oh-my-zsh plugins
 plugins=(
   git
-  osx
+  macos
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -20,6 +20,7 @@ unset file
 
 export EDITOR="nvim"
 export SHELL="zsh"
+export LANG="en_US.UTF-8"
 
 source ~/.antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -37,6 +38,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=~/Library/Python/2.7/bin:$PATH
+export PATH=$(pyenv root)/shims:$PATH
 
 # go bin path
 export PATH=$PATH:/usr/local/opt/go/libexec/bin

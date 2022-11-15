@@ -70,7 +70,6 @@ Plug 'glepnir/dashboard-nvim'
 
 " Language Server Protocol
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 " Plug 'tami5/lspsaga.nvim'
 Plug 'folke/trouble.nvim'
@@ -137,6 +136,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
+Plug 'pwntester/octo.nvim'
+
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'APZelos/blamer.nvim'
 Plug 'lewis6991/gitsigns.nvim'
@@ -168,6 +169,10 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'projekt0n/github-nvim-theme'
 
 call plug#end()
+
+lua << EOF
+require("octo").setup()
+EOF
 
 nnoremap <silent> <leader>code <cmd>lua require('export-to-vscode').launch()<cr>
 lua << EOF
@@ -313,6 +318,12 @@ lua require('neoscroll').setup()
 " neovim/nvim-lspconfig
 " npm i -g typescript typescript-language-server
 lua << EOF
+require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require'lspconfig'.eslint.setup{}
+
 -- local util = require "lspconfig/util"
 -- require 'lspconfig'.tsserver.setup{
     -- on_attach = function(client)
@@ -442,11 +453,7 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 " EOF
 
 lua << EOF
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-end)
+-- local lsp_installer = require("nvim-lsp-installer")
 EOF
 
 lua << EOF
@@ -454,12 +461,13 @@ local null_ls = require("null-ls")
 
 -- register any number of sources simultaneously
 local sources = {
-    null_ls.builtins.formatting.prettierd
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.terraform_fmt
 }
 local function on_attach(client)
   print('Attached to ' .. client.name)
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync(nil, 5000)]]
@@ -604,7 +612,7 @@ lua <<EOF
         require('luasnip').lsp_expand(args.body)
       end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       --['<C-Space>'] = cmp.mapping.complete(),
@@ -615,7 +623,7 @@ lua <<EOF
         behavior = cmp.ConfirmBehavior.Insert,        
         select = true
       }),
-    },
+    }),
     sources = {
       { name = 'nvim_lsp' },
       -- For vsnip user.
@@ -649,7 +657,7 @@ EOF
 " nvim-treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'html', 'javascript', 'typescript', 'tsx', 'css', 'json', 'graphql', 'prisma' },
+  ensure_installed = { 'html', 'javascript', 'typescript', 'tsx', 'css', 'json', 'graphql', 'prisma', 'hcl' },
   -- ensure_installed = "all", -- or maintained
   highlight = {
     enable = true,
@@ -748,27 +756,39 @@ let g:dashboard_custom_footer = s:footer
 " let g:nvim_tree_gitignore = 1
 " let g:nvim_tree_auto_close = 1
 " let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]
-let g:nvim_tree_quit_on_open = 1
-let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_highlight_opened_files = 1
-let g:nvim_tree_group_empty = 1
+" let g:nvim_tree_quit_on_open = 1
+" let g:nvim_tree_indent_markers = 1
+" let g:nvim_tree_git_hl = 1
+" let g:nvim_tree_highlight_opened_files = 1
+" let g:nvim_tree_group_empty = 1
 " let g:nvim_tree_lsp_diagnostics = 1
 
 lua << EOF
 require'nvim-tree'.setup {
-  auto_close = true,
   -- lsp_diagnostics = true,
   ignore_ft_on_setup  = { 'startify', 'dashboard' },
   git = {
     ignore = true,
-  }
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
+    },
+    highlight_git = true,
+    highlight_opened_files = "icon",
+    group_empty = true,
+  },
 }
 
 vim.cmd([[ command! -nargs=1 Browse silent exec '!open "<args>"' ]])
 EOF
 
-nnoremap <leader>d :NvimTreeToggle<CR>
+nnoremap <leader>d :NvimTreeFindFileToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 
@@ -834,9 +854,9 @@ autocmd BufNewFile,BufRead *.md,*.mdx,*.markdown :set filetype=markdown
 " Abbreviations
 iabbrev @@ emanor@planview.com
 
-lua << EOF
-vim.lsp.set_log_level("debug")
-EOF
+" lua << EOF
+" vim.lsp.set_log_level("debug")
+" EOF
 
 " Snippets
 " nnoremap ,desc :-1read $HOME/.config/snippets/describe.snip<CR>V2j=f"a
