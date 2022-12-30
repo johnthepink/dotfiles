@@ -15,6 +15,7 @@ local M = {
     { "<leader>fw", "<cmd>Telescope tmux windows<cr>" },
   },
   dependencies = {
+    "nvim-lua/plenary.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
