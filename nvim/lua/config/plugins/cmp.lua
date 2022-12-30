@@ -18,32 +18,32 @@ function M.config()
     auto_select = false,
     snippet = {
       expand = function(args)
-        require('luasnip').lsp_expand(args.body)
+        require("luasnip").lsp_expand(args.body)
       end,
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-f>"] = cmp.mapping.scroll_docs(4),
       --['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-x>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.close(),
+      ["<C-x>"] = cmp.mapping.complete(),
+      ["<C-e>"] = cmp.mapping.close(),
       --['<CR>'] = cmp.mapping.confirm({ select = false }),
-      ['<C-y>'] = cmp.mapping.confirm({
-        behavior = cmp.ConfirmBehavior.Insert,        
-        select = true
+      ["<C-y>"] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
       }),
     }),
     sources = {
-      { name = 'nvim_lsp' },
+      { name = "nvim_lsp" },
       -- For vsnip user.
       -- { name = 'vsnip' },
       -- For luasnip user.
-      { name = 'path' },
+      { name = "path" },
       -- For ultisnips user.
       -- { name = 'ultisnips' },
-      { name = 'luasnip' },
-      { name = 'buffer', keywork_length = 5 },
-      { name = 'npm', keyword_length = 4 },
+      { name = "luasnip" },
+      { name = "buffer", keywork_length = 5 },
+      { name = "npm", keyword_length = 4 },
     },
     formatting = {
       -- format = require('lspkind').cmp_format {
@@ -58,8 +58,8 @@ function M.config()
     },
     experimental = {
       native_menu = false,
-      ghost_text = true
-    }
+      ghost_text = true,
+    },
   })
 end
 

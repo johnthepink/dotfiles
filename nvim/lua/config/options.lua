@@ -10,7 +10,7 @@ o.splitright = true
 o.splitbelow = true
 o.errorbells = false
 o.wrap = false
-o.formatoptions:remove { "t" }
+o.formatoptions:remove({ "t" })
 o.ignorecase = true
 o.smartcase = true
 o.swapfile = false
@@ -26,12 +26,12 @@ o.signcolumn = "yes"
 o.number = true
 o.updatetime = 50
 o.encoding = "UTF-8"
-o.clipboard:append { "unnamedplus" }
+o.clipboard:append({ "unnamedplus" })
 o.joinspaces = false
 o.showcmd = true
-o.wildignore:append { "*/node_modules/**" }
+o.wildignore:append({ "*/node_modules/**" })
 o.foldlevel = 20
-o.foldmethod = "expr"
+o.foldmethod = "manual"
 o.foldexpr = "nvim_treesitter#foldexpr()"
 o.expandtab = true
 o.tabstop = 2

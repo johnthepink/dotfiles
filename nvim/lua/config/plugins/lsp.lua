@@ -30,9 +30,19 @@ end
 function M.config()
   M.diagnostics()
 
-  local lsp = require "lspconfig"
+  local lsp = require("lspconfig")
   lsp.tsserver.setup({})
   lsp.eslint.setup({})
+  lsp.sumneko_lua.setup({
+    cmd = { "/Users/john/.dotfiles/bin/lua-language-server/bin/lua-language-server" },
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
+      },
+    },
+  })
 
   local nls = require("config/plugins/null-ls")
   nls.setup()

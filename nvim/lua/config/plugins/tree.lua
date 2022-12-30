@@ -10,7 +10,7 @@ local M = {
 }
 
 function M.config()
-  require('nvim-tree').setup({
+  require("nvim-tree").setup({
     -- lsp_diagnostics = true,
     git = {
       ignore = true,

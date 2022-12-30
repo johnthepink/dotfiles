@@ -40,8 +40,6 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 [ -f /Users/john.pinkerton/.travis/travis.sh ] && source /Users/john.pinkerton/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=~/Library/Python/2.7/bin:$PATH
-export PATH=$(pyenv root)/shims:$PATH
 
 # go bin path
 export PATH=$PATH:/usr/local/opt/go/libexec/bin

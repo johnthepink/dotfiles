@@ -2,7 +2,7 @@ return {
   "folke/trouble.nvim",
 
   config = function()
-    require('trouble').setup()
+    require("trouble").setup()
   end,
 
   keys = {
@@ -14,4 +14,3 @@ return {
     { "gR", "<cmd>TroubleToggle lsp_references<cr>" },
   },
 }
-

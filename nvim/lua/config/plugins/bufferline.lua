@@ -12,17 +12,17 @@ function bufferline.config()
   require("bufferline").setup({
     highlights = {
       fill = {
-        bg = "#282828"
+        bg = "#282828",
       },
       separator_selected = {
-        fg = "#282828"
+        fg = "#282828",
       },
       separator_visible = {
-        fg = "#282828"
+        fg = "#282828",
       },
       separator = {
-        fg = "#282828"
-      }
+        fg = "#282828",
+      },
     },
     options = {
       modified_icon = "●",
@@ -38,17 +38,17 @@ function bufferline.config()
       diagnostics = "nvim_lsp",
       diagnostics_update_in_insert = false,
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
-        return "("..count..")"
+        return "(" .. count .. ")"
       end,
       offsets = {
         {
           filetype = "coc-explorer",
           text = "File Explorer",
           highlight = "Directory",
-          text_align = "center"
-        }
-      }
-    }
+          text_align = "center",
+        },
+      },
+    },
   })
 end
 
