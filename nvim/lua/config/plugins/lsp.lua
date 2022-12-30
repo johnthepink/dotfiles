@@ -13,7 +13,23 @@ local M = {
   },
 }
 
+function M.diagnostics()
+  -- Automatically update diagnostics
+  vim.diagnostic.config({
+    virtual_text = { spacing = 4, prefix = "●" },
+    severity_sort = true,
+  })
+
+  local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+  for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  end
+end
+
 function M.config()
+  M.diagnostics()
+
   local lsp = require "lspconfig"
   lsp.tsserver.setup({})
   lsp.eslint.setup({})
