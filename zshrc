@@ -22,6 +22,9 @@ export EDITOR="nvim"
 export SHELL="zsh"
 export LANG="en_US.UTF-8"
 
+# set path for homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)" 
+
 source ~/.antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
