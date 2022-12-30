@@ -2,26 +2,14 @@ local M = {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
   keys = {
-    { "gca", "<cmd>:Telescope lsp_code_actions<CR>" },
-    {
-      "<leader>ps",
-      ":lua require('telescope.builtin').grep_string( { search = vim.fn.input('Grep for > ') } )<cr>",
-    },
-    {
-      "<leader>ff",
-      ":lua require'telescope.builtin'.find_files{ hidden = true, file_ignore_patterns = { '.git/' } }<cr>",
-    },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>" },
-    { "<Leader>fs", ":lua require'telescope.builtin'.file_browser{ cwd = vim.fn.expand('%:p:h') }<cr>" },
-    { "<Leader>fc", ":lua require'telescope.builtin'.git_status{}<cr>" },
-    { "<Leader>cb", ":lua require'telescope.builtin'.git_branches{}<cr>" },
-    { "<leader>fr", ":lua require'telescope.builtin'.resume{}<CR>" },
-    {
-      "<leader>fg",
-      "<cmd>lua require('telescope.builtin').live_grep( { file_ignore_patterns = { '**/*.spec.js' } } )<cr>",
-    },
-    { "<leader>fgd", ":lua require'telescope.builtin'.live_grep{ search_dirs = { 'slices/admin' } }" },
-    { "<leader>fw", "<cmd>Telescope tmux windows<cr>" },
+    "gca",
+    "<leader>ps",
+    "<leader>ff",
+    "<leader>fb",
+    "<leader>fc",
+    "<leader>cb",
+    "<leader>fr",
+    "<leader>fg",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -31,6 +19,35 @@ local M = {
     },
   },
 }
+
+function M.setup_keys()
+  local ts = require("telescope.builtin")
+
+  vim.keymap.set("n", "gca", function()
+    vim.lsp.buf.code_action()
+  end)
+  vim.keymap.set("n", "<leader>ps", function()
+    ts.grep_string({ search = vim.fn.input("Grep for >") })
+  end)
+  vim.keymap.set("n", "<leader>ff", function()
+    ts.find_files({ hidden = true, file_ignore_patterns = { ".git/" } })
+  end)
+  vim.keymap.set("n", "<leader>fb", function()
+    ts.buffers()
+  end)
+  vim.keymap.set("n", "<leader>fc", function()
+    ts.git_status()
+  end)
+  vim.keymap.set("n", "<leader>cb", function()
+    ts.git_branches()
+  end)
+  vim.keymap.set("n", "<leader>fr", function()
+    ts.resume()
+  end)
+  vim.keymap.set("n", "<leader>fg", function()
+    ts.live_grep({ file_ignore_patterns = {} })
+  end)
+end
 
 function M.config()
   local telescope = require("telescope")
@@ -69,6 +86,8 @@ function M.config()
   })
 
   telescope.load_extension("fzf")
+
+  M.setup_keys()
 end
 
 return M
