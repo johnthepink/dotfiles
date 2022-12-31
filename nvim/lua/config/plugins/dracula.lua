@@ -3,6 +3,7 @@ local M = {
   name = "dracula",
   lazy = false,
   priority = 1000,
+  enabled = false,
 }
 
 function M.config()

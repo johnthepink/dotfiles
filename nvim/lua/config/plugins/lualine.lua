@@ -4,16 +4,22 @@ local M = {
 }
 
 function M.config()
+  local nvim_tree_shift = {
+    function()
+      return string.rep(" ", vim.api.nvim_win_get_width(require("nvim-tree.view").get_winnr()) - 1)
+    end,
+    cond = require("nvim-tree.view").is_visible,
+    color = "NvimTreeNormal",
+  }
+
   require("lualine").setup({
     options = {
-      theme = "dracula",
-      disabled_types = { "NvimTree" },
+      theme = "tokyonight",
     },
-    -- sections = {
-    -- lualine_x = {},
-    -- lualine_y = {},
-    -- lualine_z = {},
-    -- }
+    sections = {
+      lualine_a = { nvim_tree_shift, "mode" }, -- dont show when tree open
+      lualine_x = { "filetype" }, -- remove encoding and format
+    },
   })
 end
 
