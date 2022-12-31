@@ -64,13 +64,3 @@ function v2g() {
 
 # local settings
 source $HOME/.zshrc.local
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/john/code/monorepo/services/graphql-app/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/john/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/john/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
