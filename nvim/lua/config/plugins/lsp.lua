@@ -6,7 +6,7 @@ local M = {
     { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
     { "gh", "<cmd>lua vim.lsp.buf.hover()<CR>" },
     { "gD", "<cmd>lua vim.lsp.buf.implementation()<CR>" },
-    { "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
+    { "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
     { "gr", "<cmd>lua vim.lsp.buf.references()<CR>" },
     { "gR", "<cmd>lua vim.lsp.buf.rename()<CR>" },
     { "<leader>fo", "<cmd>lua vim.lsp.buf.formatting()<CR>" },

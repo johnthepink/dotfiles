@@ -32,4 +32,8 @@ return {
       require("nvim-cursorline").setup()
     end,
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
+  },
 }
