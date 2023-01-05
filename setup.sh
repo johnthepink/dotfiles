@@ -30,8 +30,8 @@ touch ~/.zshrc.local
 
 echo "symlinking gpg config"
 mkdir ~/.gnupg
-ln -sf ~/.dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-ln -sf ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
+ln -sf ~/.dotfiles/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -sf ~/.dotfiles/gnupg/gpg.conf ~/.gnupg/gpg.conf
 
 echo "installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
