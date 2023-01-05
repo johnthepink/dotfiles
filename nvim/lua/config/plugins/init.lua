@@ -6,9 +6,25 @@ return {
   },
   {
     "ruifm/gitlinker.nvim",
-    keys = "<leader>gy",
+    keys = {
+      "<leader>gy",
+      "<leader>gb",
+    },
     config = function()
-      require("gitlinker").setup()
+      local gitlinker = require("gitlinker")
+      local open_in_browser = require("gitlinker.actions").open_in_browser
+      gitlinker.setup({
+        opts = {
+          add_current_line_on_normal_mode = false,
+        },
+      })
+
+      vim.keymap.set("n", "<leader>gb", function()
+        gitlinker.get_buf_range_url("n", { action_callback = open_in_browser })
+      end)
+      vim.keymap.set("v", "<leader>gb", function()
+        gitlinker.get_buf_range_url("v", { action_callback = open_in_browser })
+      end)
     end,
   },
   {
