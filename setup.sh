@@ -16,17 +16,17 @@ curl https://cdn.rawgit.com/zsh-users/antigen/v1.4.1/bin/antigen.zsh > ~/.antige
 mkdir -p ~/.config
 
 echo "symlinking main files"
-ln -sf ~/.dotfiles/aliases ~/.aliases
+ln -sf ~/.dotfiles/shell/aliases ~/.aliases
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/git/gitignore ~/.gitignore
-ln -sf ~/.dotfiles/prompt ~/.prompt
+ln -sf ~/.dotfiles/shell/prompt ~/.prompt
 ln -sf ~/.dotfiles/tmux ~/.config/tmux
 ln -sf ~/.dotfiles/bat ~/.config/bat
 ln -sf ~/.dotfiles/kitty ~/.config/kitty
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/bin ~/bin
-ln -sf ~/.dotfiles/zshenv ~/.zshenv
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/shell/zshenv ~/.zshenv
+ln -sf ~/.dotfiles/shell/zshrc ~/.zshrc
 touch ~/.zshrc.local
 
 echo "symlinking gpg config"
