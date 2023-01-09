@@ -6,7 +6,8 @@ local M = {
 function M.config()
   local nvim_tree_shift = {
     function()
-      return string.rep(" ", vim.api.nvim_win_get_width(require("nvim-tree.view").get_winnr(0)) - 1)
+      local win = require("nvim-tree.view").get_winnr() or 0
+      return string.rep(" ", vim.api.nvim_win_get_width(win) - 1)
     end,
     cond = require("nvim-tree.view").is_visible,
     color = "NvimTreeNormal",
