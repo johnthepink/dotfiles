@@ -6,7 +6,7 @@ local mini = {
 local specs = { mini, "JoosepAlviste/nvim-ts-context-commentstring" }
 
 function mini.surround()
-  require("mini.surround").setup()
+  require("mini.surround").setup({})
 end
 
 function mini.comment()

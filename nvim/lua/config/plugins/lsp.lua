@@ -11,6 +11,9 @@ local M = {
     { "gR", "<cmd>lua vim.lsp.buf.rename()<CR>" },
     { "<leader>fo", "<cmd>lua vim.lsp.buf.formatting()<CR>" },
   },
+  dependencies = {
+    "folke/neodev.nvim",
+  },
 }
 
 function M.diagnostics()
@@ -28,6 +31,8 @@ function M.diagnostics()
 end
 
 function M.config()
+  require("neodev").setup({})
+
   M.diagnostics()
 
   local lsp = require("lspconfig")
