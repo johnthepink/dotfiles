@@ -57,6 +57,9 @@ brew install git
 echo "installing hub"
 brew install hub
 
+echo "installing bat"
+brew install bat
+
 echo "installing tmux"
 brew install tmux
 mkdir -p ~/.config/tmux/plugins
@@ -66,7 +69,7 @@ echo "installing pythons"
 brew install python python3
 
 echo "installing neovim"
-brew install
+brew install neovim
 pip install neovim
 pip3 install neovim
 gem install neovim
