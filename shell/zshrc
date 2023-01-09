@@ -8,14 +8,14 @@ export SHELL="zsh"
 export LANG="en_US.UTF-8"
 export CLICOLOR=1
 
+# set path for homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)" 
+
 source ~/.dotfiles/shell/completions
 source ~/.dotfiles/shell/directories
 
 # Use emacs key bindings
 bindkey -e
-
-# set path for homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)" 
 
 source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
