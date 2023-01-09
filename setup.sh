@@ -6,13 +6,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "install xcode command line tools"
 xcode-select --install
 
-echo "install ohmyzsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo "install antigen"
-mkdir ~/.antigen
-curl https://cdn.rawgit.com/zsh-users/antigen/v1.4.1/bin/antigen.zsh > ~/.antigen/antigen.zsh
-
 mkdir -p ~/.config
 
 echo "symlinking main files"
@@ -36,6 +29,9 @@ ln -sf ~/.dotfiles/gnupg/gpg.conf ~/.gnupg/gpg.conf
 
 echo "installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "installing zsh plugins"
+brew install zsh-fast-syntax-highlighting zsh-autosuggestions
 
 echo "installling gpg"
 brew install gpg gpg-agent pinentry-mac
