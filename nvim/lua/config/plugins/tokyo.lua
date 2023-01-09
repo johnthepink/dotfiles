@@ -15,9 +15,7 @@ function tokyo.config()
     end,
   })
 
-  vim.cmd([[
-    colorscheme tokyonight
-  ]])
+  vim.cmd.colorscheme("tokyonight")
 end
 
 return tokyo
