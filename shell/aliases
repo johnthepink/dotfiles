@@ -2,6 +2,7 @@ alias t="tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
 alias git=hub
+alias __git=hub # fix hub autocomplete
 alias v="nvim"
 alias v.="v ."
 alias cat=bat
