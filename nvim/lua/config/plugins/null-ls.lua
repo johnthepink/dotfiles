@@ -11,14 +11,20 @@ function M.setup()
     null_ls.builtins.formatting.stylua,
   }
 
-  local function on_attach(client)
+  local augroup = vim.api.nvim_create_augroup
+  local autocmd = vim.api.nvim_create_autocmd
+
+  local function on_attach(client, buffer)
     print("Attached to " .. client.name)
 
     if client.server_capabilities.documentFormattingProvider then
-      vim.api.nvim_command([[augroup Format]])
-      vim.api.nvim_command([[autocmd! * <buffer>]])
-      vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync(nil, 5000)]])
-      vim.api.nvim_command([[augroup END]])
+      autocmd("BufWritePre", {
+        group = augroup("Format", {}),
+        buffer = buffer,
+        callback = function()
+          vim.lsp.buf.format()
+        end,
+      })
     end
   end
 
