@@ -44,6 +44,7 @@ function M.config()
       { name = "luasnip" },
       { name = "buffer", keywork_length = 5 },
       { name = "npm", keyword_length = 4 },
+      { name = "neorg" },
     },
     formatting = {
       -- format = require('lspkind').cmp_format {
