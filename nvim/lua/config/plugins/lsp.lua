@@ -9,7 +9,7 @@ local M = {
     { "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
     { "gr", "<cmd>lua vim.lsp.buf.references()<CR>" },
     { "gR", "<cmd>lua vim.lsp.buf.rename()<CR>" },
-    { "<leader>fo", "<cmd>lua vim.lsp.buf.formatting()<CR>" },
+    { "<leader>fo", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>" },
   },
   dependencies = {
     "folke/neodev.nvim",

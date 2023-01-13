@@ -30,23 +30,17 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
-    config = function()
-      require("gitsigns").setup()
-    end,
+    config = true,
   },
   {
     "karb94/neoscroll.nvim",
     event = "VeryLazy",
-    config = function()
-      require("neoscroll").setup()
-    end,
+    config = true,
   },
   {
     "yamatsum/nvim-cursorline",
     event = "BufReadPre",
-    config = function()
-      require("nvim-cursorline").setup()
-    end,
+    config = true,
   },
   {
     "christoomey/vim-tmux-navigator",

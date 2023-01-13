@@ -1,10 +1,6 @@
 return {
   "folke/trouble.nvim",
-
-  config = function()
-    require("trouble").setup()
-  end,
-
+  config = true,
   keys = {
     { "<leader>xx", "<cmd>TroubleToggle<cr>" },
     { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>" },

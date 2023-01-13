@@ -1,11 +1,8 @@
-local M = {
+return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   lazy = false,
-}
-
-function M.config()
-  require("nvim-treesitter.configs").setup({
+  opts = {
     ensure_installed = {
       "html",
       "javascript",
@@ -22,7 +19,6 @@ function M.config()
       "vim",
       "help",
     },
-    -- ensure_installed = "all", -- or maintained
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = true,
@@ -33,7 +29,5 @@ function M.config()
     context_commentstring = {
       enable = true,
     },
-  })
-end
-
-return M
+  },
+}

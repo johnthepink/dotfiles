@@ -2,6 +2,9 @@ local M = {
   "jose-elias-alvarez/null-ls.nvim",
 }
 
+-- this is called form within the lsp config,
+-- which is why this is named setup instead of config
+-- so it is not auto run by lazy
 function M.setup()
   local null_ls = require("null-ls")
 
