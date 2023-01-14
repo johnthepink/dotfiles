@@ -39,3 +39,4 @@ o.softtabstop = 2
 o.shiftwidth = 2
 o.ttyfast = true
 o.lazyredraw = true
+o.spelllang = "en_us"

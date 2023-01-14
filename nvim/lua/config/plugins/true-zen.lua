@@ -25,6 +25,24 @@ function zen.config()
       twilight = false, -- enable twilight (ataraxis)
       lualine = true, -- hide nvim-lualine (ataraxis)
     },
+    modes = {
+      ataraxis = {
+        callbacks = {
+          open_pre = function()
+            local o = vim.opt
+            o.spell = true
+            o.wrap = true
+            o.linebreak = true
+          end,
+          close_pos = function()
+            local o = vim.opt
+            o.spell = false
+            o.wrap = false
+            o.linebreak = false
+          end,
+        },
+      },
+    },
   })
 end
 
