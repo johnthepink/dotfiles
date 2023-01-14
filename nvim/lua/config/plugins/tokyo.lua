@@ -2,10 +2,7 @@ local tokyo = {
   "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
-}
-
-function tokyo.config()
-  require("tokyonight").setup({
+  opts = {
     style = "storm",
     lualine_bold = true,
     on_colors = function(colors)
@@ -13,7 +10,11 @@ function tokyo.config()
       colors.gitSigns.delete = colors.red
       colors.gitSigns.change = colors.orange
     end,
-  })
+  },
+}
+
+function tokyo.config(_, opts)
+  require("tokyonight").setup(opts)
 
   vim.cmd.colorscheme("tokyonight")
 end

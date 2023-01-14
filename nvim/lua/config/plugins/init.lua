@@ -38,11 +38,6 @@ return {
     config = true,
   },
   {
-    "yamatsum/nvim-cursorline",
-    event = "BufReadPre",
-    config = true,
-  },
-  {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
   },
