@@ -7,6 +7,7 @@ export EDITOR="nvim"
 export SHELL="zsh"
 export LANG="en_US.UTF-8"
 export CLICOLOR=1
+export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
 
 # set path for homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)" 
