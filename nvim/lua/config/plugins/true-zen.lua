@@ -30,7 +30,6 @@ function zen.config()
         callbacks = {
           open_pre = function()
             local o = vim.opt
-            o.spell = true
             o.wrap = true
             o.linebreak = true
           end,
