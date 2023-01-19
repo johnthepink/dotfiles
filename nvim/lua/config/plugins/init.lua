@@ -1,5 +1,5 @@
 return {
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
   {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
