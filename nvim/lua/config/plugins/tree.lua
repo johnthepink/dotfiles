@@ -1,13 +1,20 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
   event = "VeryLazy",
-  cmd = "NvimTreeFindFileToggle",
-  keys = {
-    { "<leader>d", ":NvimTreeFindFileToggle<CR>" },
-    { "<leader>r", ":NvimTreeRefresh<CR>" },
-    { "<leader>n", ":NvimTreeFindFile<CR>" },
-  },
+  keys = { "<leader>d", "<leader>r" },
 }
+
+function M.setup_keys()
+  local api = require("nvim-tree.api")
+
+  vim.keymap.set("n", "<leader>d", function()
+    api.tree.toggle({ find_file = true, focus = true })
+  end)
+
+  vim.keymap.set("n", "<leader>r", function()
+    api.tree.reload()
+  end)
+end
 
 function M.config()
   require("nvim-tree").setup({
@@ -31,6 +38,8 @@ function M.config()
   })
 
   vim.cmd([[ command! -nargs=1 Browse silent exec '!open "<args>"' ]])
+
+  M.setup_keys()
 end
 
 return M
