@@ -1,5 +1,5 @@
 local bufferline = {
-  "akinsho/nvim-bufferline.lua",
+  "akinsho/bufferline.nvim",
   event = "BufReadPre",
   keys = {
     { "gb", ":BufferLinePick<cr>" },
@@ -9,7 +9,13 @@ local bufferline = {
 function bufferline.config()
   vim.api.nvim_exec([[let $KITTY_WINDOW_ID=0]], true)
 
-  require("bufferline").setup()
+  require("bufferline").setup({
+    options = {
+      offsets = {
+        { filetype = "NvimTree" },
+      },
+    },
+  })
 end
 
 return bufferline
