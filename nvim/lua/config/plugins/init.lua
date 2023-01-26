@@ -9,6 +9,8 @@ return {
     keys = {
       "<leader>gy",
       "<leader>gb",
+      { "<leader>gy", mode = "v" },
+      { "<leader>gb", mode = "v" },
     },
     config = function()
       local gitlinker = require("gitlinker")
