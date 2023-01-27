@@ -12,7 +12,6 @@
   "lualine.nvim": { "branch": "master", "commit": "0050b308552e45f7128f399886c86afefc3eb988" },
   "mini.nvim": { "branch": "main", "commit": "81a575e0c51d4607bf6690f12906c7590d961717" },
   "neodev.nvim": { "branch": "main", "commit": "8b14787044352eb264cd105f5b0762565e1779f5" },
-  "neorg": { "branch": "main", "commit": "4a9a5fe13cd454692fc4db0b27783cd005e6be56" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
   "null-ls.nvim": { "branch": "main", "commit": "2ff0a4ed1985d04bae3f21915ee0b1be3932c164" },
   "nvim-cmp": { "branch": "main", "commit": "e7e2ef7031db8e0cfad7ad9916ec766ddd9dbb3b" },

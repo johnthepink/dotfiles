@@ -43,28 +43,4 @@ return {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
   },
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    -- ft = "norg",
-    event = "VeryLazy",
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-        ["core.norg.dirman"] = {
-          config = {
-            workspaces = {
-              work = "~/notes/worktest",
-              home = "~/notes/hometest",
-            },
-          },
-        },
-        ["core.norg.concealer"] = {},
-        ["core.norg.completion"] = {
-          config = { engine = "nvim-cmp" },
-        },
-        ["core.integrations.nvim-cmp"] = {},
-      },
-    },
-  },
 }
