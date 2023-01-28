@@ -17,6 +17,20 @@ return {
       end,
       desc = "Explorer NeoTree (root dir)",
     },
+    {
+      "<leader>b",
+      function()
+        require("neo-tree.command").execute({ source = "buffers", toggle = true, reveal = true })
+      end,
+      desc = "Explorer NeoTree (root dir)",
+    },
+    {
+      "<leader>gs",
+      function()
+        require("neo-tree.command").execute({ source = "git_status", toggle = true, reveal = true })
+      end,
+      desc = "Explorer NeoTree (root dir)",
+    },
   },
 
   config = {
