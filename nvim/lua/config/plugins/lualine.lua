@@ -7,7 +7,7 @@ function M.config()
   require("lualine").setup({
     options = {
       disabled_filetypes = {
-        "NvimTree",
+        "neo-tree",
       },
     },
     sections = {

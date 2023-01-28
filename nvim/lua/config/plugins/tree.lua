@@ -2,6 +2,7 @@ local M = {
   "kyazdani42/nvim-tree.lua",
   event = "VeryLazy",
   keys = { "<leader>d", "<leader>r" },
+  enabled = false,
 }
 
 function M.setup_keys()
