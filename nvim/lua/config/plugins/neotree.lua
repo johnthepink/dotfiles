@@ -37,6 +37,10 @@ return {
     enable_diagnostics = false,
     window = {
       width = 40,
+      mappings = {
+        ["/"] = "noop", -- "noop" removes a default mapping
+        ["g/"] = "fuzzy_finder",
+      },
     },
     source_selector = {
       statusline = true,
