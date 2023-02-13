@@ -13,6 +13,7 @@ return {
       "graphql",
       "prisma",
       "hcl",
+      "terraform",
       "markdown",
       -- these are required since neovim 0.8
       "c",
