@@ -1,4 +1,4 @@
-for file in ~/.{aliases,functions,keys,prompt}; do
+for file in ~/.dotfiles/shell/{aliases,functions,prompt,completions,directories}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -9,16 +9,13 @@ export LANG="en_US.UTF-8"
 export CLICOLOR=1
 export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
 
-## history file configuration
+# history file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 [ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
 [ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
 
 # set path for homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)" 
-
-source ~/.dotfiles/shell/completions
-source ~/.dotfiles/shell/directories
 
 # Use emacs key bindings
 bindkey -e
@@ -28,14 +25,7 @@ bindkey "^[[3~" delete-char
 source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export PATH="$(yarn global bin):$PATH"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-# added by travis gem
-[ -f /Users/john.pinkerton/.travis/travis.sh ] && source /Users/john.pinkerton/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
@@ -55,16 +45,6 @@ eval "`fnm env --use-on-cd`"
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-function v2g() {
-  ffmpeg -i "$1" -pix_fmt rgb8 -r 10 "$2" && gifsicle -O3 "$2" -o "$2"
-}
-
-# force env vars that are updated in tmux session to update in pane
-function tmup() {
-  eval $(tmux showenv -s)
-  echo "🤘tmux env reloaded..."
-}
 
 # local settings
 source $HOME/.zshrc.local

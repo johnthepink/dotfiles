@@ -1,0 +1,9 @@
+function v2g() {
+  ffmpeg -i "$1" -pix_fmt rgb8 -r 10 "$2" && gifsicle -O3 "$2" -o "$2"
+}
+
+# force env vars that are updated in tmux session to update in pane
+function tmup() {
+  eval $(tmux showenv -s)
+  echo "🤘tmux env reloaded..."
+}
