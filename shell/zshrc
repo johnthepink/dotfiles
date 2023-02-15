@@ -29,9 +29,6 @@ export PATH="$(yarn global bin):$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# go bin path
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
 # my bin
 export PATH=$PATH:~/.dotfiles/bin
 
