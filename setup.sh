@@ -14,6 +14,7 @@ ln -sf ~/.dotfiles/git/gitignore ~/.gitignore
 ln -sf ~/.dotfiles/tmux ~/.config/tmux
 ln -sf ~/.dotfiles/bat ~/.config/bat
 ln -sf ~/.dotfiles/kitty ~/.config/kitty
+ln -sf ~/.dotfiles/wezterm ~/.config/wezterm
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/bin ~/bin
 ln -sf ~/.dotfiles/shell/zshenv ~/.zshenv
