@@ -1,7 +1,6 @@
 local M = {
   "neovim/nvim-lspconfig",
   event = "BufReadPre",
-  pin = true,
   keys = {
     { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
     { "gh", "<cmd>lua vim.lsp.buf.hover()<CR>" },
