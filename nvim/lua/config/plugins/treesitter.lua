@@ -15,6 +15,8 @@ return {
       "hcl",
       "terraform",
       "markdown",
+      "regex",
+      "markdown_inline",
       -- these are required since neovim 0.8
       "c",
       "lua",

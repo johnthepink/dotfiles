@@ -18,7 +18,7 @@ function M.setup()
   local autocmd = vim.api.nvim_create_autocmd
 
   local function on_attach(client, buffer)
-    print("Attached to " .. client.name)
+    -- print("Attached to " .. client.name)
 
     if client.server_capabilities.documentFormattingProvider then
       autocmd("BufWritePre", {
