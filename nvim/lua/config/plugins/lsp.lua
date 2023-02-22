@@ -38,15 +38,8 @@ function M.config()
   local lsp = require("lspconfig")
   lsp.tsserver.setup({})
   lsp.eslint.setup({})
-  lsp.sumneko_lua.setup({
+  lsp.lua_ls.setup({
     cmd = { "/Users/john/.dotfiles/bin/lua-language-server/bin/lua-language-server" },
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = { "vim" },
-        },
-      },
-    },
   })
 
   local nls = require("config/plugins/null-ls")
