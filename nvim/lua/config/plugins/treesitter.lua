@@ -17,6 +17,7 @@ return {
       "markdown",
       "regex",
       "markdown_inline",
+      "sql",
       -- these are required since neovim 0.8
       "c",
       "lua",
