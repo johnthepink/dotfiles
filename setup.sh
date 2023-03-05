@@ -63,6 +63,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 echo "installing pythons"
 brew install python python3
 
+echo "installing php (for alfred)"
+brew install php
+
+echo "installing gif generating things"
+brew install ffmpeg gifsicle
+
 echo "installing neovim"
 brew install neovim
 pip install neovim
