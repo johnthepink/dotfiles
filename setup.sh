@@ -72,6 +72,9 @@ brew install php
 echo "installing gif generating things"
 brew install ffmpeg gifsicle
 
+echo "installing stylua"
+brew install stylua
+
 echo "installing neovim"
 brew install neovim
 pip install neovim
