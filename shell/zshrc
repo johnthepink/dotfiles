@@ -27,8 +27,6 @@ source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="$(yarn global bin):$PATH"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # my bin
 export PATH=$PATH:~/.dotfiles/bin
 
