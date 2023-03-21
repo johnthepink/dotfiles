@@ -19,6 +19,9 @@ return {
       "markdown_inline",
       "sql",
       "bash",
+      "ruby",
+      "yaml",
+      "dockerfile",
       -- these are required since neovim 0.8
       "c",
       "lua",
