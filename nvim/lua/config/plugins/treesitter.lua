@@ -22,6 +22,7 @@ return {
       "ruby",
       "yaml",
       "dockerfile",
+      "python",
       -- these are required since neovim 0.8
       "c",
       "lua",
