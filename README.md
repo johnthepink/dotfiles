@@ -1,6 +1,6 @@
 # dotfiles, mate
 
-```sh
+```bash
 git clone johnthepink/dotfiles ~/.dotfiles
 ~/.dotfiles/setup.sh
 ```
