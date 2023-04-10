@@ -40,6 +40,7 @@ function M.config()
   lsp.lua_ls.setup({
     cmd = { "/Users/john/.dotfiles/bin/lua-language-server/bin/lua-language-server" },
   })
+  lsp.solargraph.setup({})
 
   local nls = require("config/plugins/null-ls")
   nls.setup()
