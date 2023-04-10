@@ -38,7 +38,7 @@ function M.config()
   lsp.tsserver.setup({})
   lsp.eslint.setup({})
   lsp.lua_ls.setup({
-    cmd = { "/Users/john/.dotfiles/bin/lua-language-server/bin/lua-language-server" },
+    cmd = { "/Users/john/code/lua-language-server/bin/lua-language-server" },
   })
   lsp.solargraph.setup({})
 
