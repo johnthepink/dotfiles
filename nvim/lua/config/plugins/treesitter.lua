@@ -27,7 +27,7 @@ return {
       "c",
       "lua",
       "vim",
-      "help",
+      "vimdoc",
     },
     highlight = {
       enable = true,
