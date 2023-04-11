@@ -9,7 +9,9 @@ function M.setup()
   local null_ls = require("null-ls")
 
   local sources = {
-    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.prettierd.with({
+      extra_filetypes = { "ruby" },
+    }),
     null_ls.builtins.formatting.terraform_fmt,
     null_ls.builtins.formatting.stylua,
   }
