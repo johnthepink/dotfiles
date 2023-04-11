@@ -36,7 +36,22 @@ function M.config()
 
   local lsp = require("lspconfig")
   lsp.tsserver.setup({})
-  lsp.eslint.setup({})
+  lsp.eslint.setup({
+    filetypes = {
+      -- defaults
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+      "vue",
+      "svelte",
+      "astro",
+      -- added
+      "graphql",
+    },
+  })
   lsp.lua_ls.setup({
     cmd = { "/Users/john/code/lua-language-server/bin/lua-language-server" },
   })
