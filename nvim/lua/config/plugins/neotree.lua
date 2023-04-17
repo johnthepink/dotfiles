@@ -39,11 +39,10 @@ return {
     },
     source_selector = {
       statusline = true,
-      tab_labels = { -- falls back to source_name if nil
-        filesystem = "",
-        buffers = "",
-        git_status = "",
-        diagnostics = "裂",
+      sources = {
+        { source = "filesystem" },
+        { source = "buffers" },
+        { source = "git_status" },
       },
       content_layout = "center",
     },
