@@ -1,6 +1,9 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
+  keys = {
+    { "<leader>c", "<cmd>Noice dismiss<cr>" },
+  },
   config = function()
     require("noice").setup({
       lsp = {

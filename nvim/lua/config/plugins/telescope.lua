@@ -7,7 +7,7 @@ local M = {
     "<leader>ff",
     "<leader>fb",
     "<leader>fc",
-    "<leader>cb",
+    -- "<leader>cb",
     "<leader>fr",
     "<leader>fg",
   },
@@ -38,9 +38,9 @@ function M.setup_keys()
   vim.keymap.set("n", "<leader>fc", function()
     ts.git_status()
   end)
-  vim.keymap.set("n", "<leader>cb", function()
-    ts.git_branches()
-  end)
+  -- vim.keymap.set("n", "<leader>cb", function()
+  --   ts.git_branches()
+  -- end)
   vim.keymap.set("n", "<leader>fr", function()
     ts.resume()
   end)
