@@ -43,4 +43,16 @@ return {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
   },
+  {
+    "opdavies/toggle-checkbox.nvim",
+    keys = {
+      "<leader>tt",
+    },
+    config = function()
+      local tc = require("toggle-checkbox")
+      vim.keymap.set("n", "<leader>tt", function()
+        tc.toggle()
+      end)
+    end,
+  },
 }
