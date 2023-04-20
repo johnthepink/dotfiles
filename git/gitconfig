@@ -88,3 +88,5 @@
         program = gpg
 [core]
 	excludesfile = /Users/john/.gitignore
+[init]
+	defaultBranch = main
