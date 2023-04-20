@@ -35,7 +35,11 @@ then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# asdf completions
 fpath=(${ASDF_DIR}/completions $fpath)
 
 autoload -Uz compinit
 compinit
+
+# kubectl completions
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)

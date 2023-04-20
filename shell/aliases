@@ -6,3 +6,4 @@ alias __git=hub # fix hub autocomplete
 alias v="nvim"
 alias v.="v ."
 alias cat=bat
+alias k=kubectl

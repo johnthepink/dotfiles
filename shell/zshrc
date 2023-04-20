@@ -26,6 +26,7 @@ source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-h
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="$(yarn global bin):$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # my bin
 export PATH=$PATH:~/.dotfiles/bin
@@ -47,4 +48,3 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 source $HOME/.zshrc.local
 
 pokemon-colorscripts -r
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
