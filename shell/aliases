@@ -1,9 +1,17 @@
+# tmux
 alias t="tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
+
+# git
 alias git=hub
 alias __git=hub # fix hub autocomplete
+
+# vim
 alias v="nvim"
 alias v.="v ."
+
+# others
 alias cat=bat
 alias k=kubectl
+alias j=jira

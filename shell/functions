@@ -7,3 +7,7 @@ function tmup() {
   eval $(tmux showenv -s)
   echo "🤘tmux env reloaded..."
 }
+
+function jme() {
+  jira issue list -a "$(jira me)" -s~Done --columns KEY,SUMMARY,STATUS,PRIORITY
+}
