@@ -9,5 +9,5 @@ function tmup() {
 }
 
 function jme() {
-  jira issue list -a "$(jira me)" -s~Done --columns KEY,SUMMARY,STATUS,PRIORITY
+  jira issue list -a "$(jira me)" -s~Done --columns KEY,SUMMARY,STATUS,PRIORITY,LABELS
 }
