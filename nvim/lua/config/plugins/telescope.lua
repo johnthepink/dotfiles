@@ -10,9 +10,11 @@ local M = {
     -- "<leader>cb",
     "<leader>fr",
     "<leader>fg",
+    "<leader>pp",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -47,10 +49,14 @@ function M.setup_keys()
   vim.keymap.set("n", "<leader>fg", function()
     ts.live_grep({ file_ignore_patterns = {} })
   end)
+  vim.keymap.set("n", "<leader>pp", function()
+    ts.planets()
+  end)
 end
 
 function M.config()
   local telescope = require("telescope")
+  local themes = require("telescope.themes")
 
   telescope.setup({
     defaults = {
@@ -69,6 +75,9 @@ function M.config()
         override_file_sorter = true,
         case_mode = "smart_case",
       },
+      ["ui-select"] = {
+        themes.get_cursor(),
+      },
     },
     pickers = {
       buffers = {
@@ -86,6 +95,7 @@ function M.config()
   })
 
   telescope.load_extension("fzf")
+  telescope.load_extension("ui-select")
 
   M.setup_keys()
 end
