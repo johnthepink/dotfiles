@@ -2,6 +2,7 @@
 alias t="tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
+alias ts="tmux-sessionizer"
 
 # git
 alias git=hub
