@@ -1,11 +1,11 @@
 local zen = {
   "Pocco81/true-zen.nvim",
   keys = {
-    { "<leader>zn", ":TZNarrow<CR>" },
-    { "<leader>zn", ":'<,'>TZNarrow<CR>", mode = "v" },
-    { "<leader>zf", ":TZFocus<CR>" },
-    { "<leader>zm", ":TZMinimalist<CR>" },
-    { "<leader>za", ":TZAtaraxis<CR>" },
+    { "<leader>zn", "<cmd>TZNarrow<cr>" },
+    { "<leader>zn", "<cmd>'<,'>TZNarrow<cr>", mode = "v" },
+    { "<leader>zf", "<cmd>TZFocus<cr>" },
+    { "<leader>zm", "<cmd>TZMinimalist<cr>" },
+    { "<leader>za", "<cmd>TZAtaraxis<cr>" },
   },
 }
 
@@ -18,7 +18,8 @@ function zen.config()
   require("true-zen").setup({
     integrations = {
       tmux = true, -- hide tmux status bar in (minimalist, ataraxis)
-      kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
+      kitty = {
+        -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
         enabled = true,
         font = "+4",
       },
