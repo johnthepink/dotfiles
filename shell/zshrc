@@ -22,7 +22,7 @@ bindkey -e
 # make delete key delete
 bindkey "^[[3~" delete-char
 
-bindkey -s ^t "tmux-sessionizer\n"
+bindkey -s ^t "^utmux-sessionizer\n"
 
 source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
