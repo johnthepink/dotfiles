@@ -11,3 +11,7 @@ function tmup() {
 function jme() {
   jira issue list -a "$(jira me)" -s~Done --columns TYPE,KEY,SUMMARY,STATUS,PRIORITY,LABELS
 }
+
+function ji() {
+  jira issue view NEO-"$1"
+}
