@@ -15,3 +15,7 @@ function jme() {
 function ji() {
   jira issue view NEO-"$1"
 }
+
+function jo() {
+  jira open NEO-"$1"
+}
