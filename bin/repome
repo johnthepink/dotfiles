@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  selected=$(
+    (
+      cacheme gh repo list --limit 1000 --json nameWithOwner &&
+      cacheme gh repo list --limit 1000 --json nameWithOwner fanconnect &&
+      (cacheme starme | jaq -s)
+    ) | jaq '.[].nameWithOwner' | tr -d '"' | fzf
+  )
+fi
+
+if [[ -z $selected ]]; then
+  exit 0
+fi
+
+gh repo view $selected --web &> /dev/null

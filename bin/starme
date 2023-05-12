@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+list=""
+endCursor=""
+is_end="true"
+
+call_star_api(){
+  # shellcheck disable=SC2016
+  gh api graphql -F first="$1" -F endCursor="$2" -f query='
+      query($first: Int, $endCursor: String!){
+        viewer {
+          starredRepositories(first: $first, after: $endCursor, orderBy: {field: STARRED_AT, direction: DESC}) {
+            edges {
+              node {
+                nameWithOwner
+              }
+            }
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+          }
+        }
+      }
+      '
+}
+
+list_stars() {
+  result=$(call_star_api "$1" "${endCursor}")
+  list="$(echo $result | jaq '.data.viewer.starredRepositories.edges[].node')"
+  echo "${list}"
+  endCursor=$(echo $result | jq -r '.data.viewer.starredRepositories.pageInfo.endCursor')
+  is_end=$(echo $result | jq -r '.data.viewer.starredRepositories.pageInfo.hasNextPage')
+}
+
+number=100
+while [ "${is_end}" = "true" ]
+do
+  list_stars $number
+done
