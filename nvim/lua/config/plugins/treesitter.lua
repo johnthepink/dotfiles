@@ -34,7 +34,7 @@ return {
       additional_vim_regex_highlighting = true,
     },
     indent = {
-      enable = false,
+      enable = true,
     },
     context_commentstring = {
       enable = true,
