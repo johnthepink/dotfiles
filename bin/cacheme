@@ -6,7 +6,7 @@ VERBOSE=false
 PROG="$(basename $0)"
 DIR="${HOME}/.cache/${PROG}"
 mkdir -p "${DIR}"
-EXPIRY=86400 # default to 1 day
+EXPIRY=604800 # default to 1 week
 # check if first argument is a number, if so use it as expiration (seconds)
 [ "$1" -eq "$1" ] 2>/dev/null && EXPIRY=$1 && shift
 [ "$VERBOSE" = true ] && echo "Using expiration $EXPIRY seconds"
