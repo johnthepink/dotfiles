@@ -30,14 +30,7 @@ function M.diagnostics()
 end
 
 function M.config()
-  require("neodev").setup({
-    library = {
-      plugins = {
-        "neotest",
-      },
-      types = true,
-    },
-  })
+  require("neodev").setup({})
 
   M.diagnostics()
 
