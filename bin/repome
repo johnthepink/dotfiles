@@ -16,4 +16,4 @@ if [[ -z $selected ]]; then
   exit 0
 fi
 
-gh repo view $selected --web &> /dev/null
+open "https://github.com/$selected"
