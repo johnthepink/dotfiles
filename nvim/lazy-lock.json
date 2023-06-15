@@ -10,7 +10,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "4f8f66da9816ec4c4847653c9ab9bcb9c609508c" },
   "lazy.nvim": { "branch": "main", "commit": "10d4371745f88837c78c8daab00c5be6e48abea4" },
   "lualine.nvim": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },
-  "mini.nvim": { "branch": "main", "commit": "807b32ed36a6668558c7c1b800ccc23fe273613c" },
+  "mini.nvim": { "branch": "main", "commit": "3a11a130bac227462dd226669d260c4bbe33fb5b" },
   "neo-tree.nvim": { "branch": "v2.x", "commit": "d883632bf8f92f1d5abea4a9c28fb2f90aa795aa" },
   "neodev.nvim": { "branch": "main", "commit": "b41da3926ce1c022a2f6a7ea8858889c3a8be4d7" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
