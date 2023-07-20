@@ -19,6 +19,7 @@ ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/bin ~/bin
 ln -sf ~/.dotfiles/shell/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/shell/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/asdf/tool-versions ~/.tool-versions
 touch ~/.zshrc.local
 
 echo "symlinking gpg config"

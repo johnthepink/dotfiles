@@ -39,8 +39,6 @@ if ! [ -n "$(pgrep gpg-agent)" ]; then
   eval $(gpg-agent --daemon)
 fi
 
-eval "`fnm env --use-on-cd`"
-
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_DEFAULT_OPTS="--ansi --color 16"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,0 +1,6 @@
+ruby 3.2.1
+nodejs 18.16.0
+yarn 1.22.19
+aws-iam-authenticator 0.6.2
+kubectl 1.27.1
+java adoptopenjdk-11.0.15+10
