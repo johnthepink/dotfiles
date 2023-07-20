@@ -2,12 +2,17 @@ local M = {
   "neovim/nvim-lspconfig",
   event = "BufReadPre",
   keys = {
-    { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
-    { "gh", "<cmd>lua vim.lsp.buf.hover()<CR>" },
-    { "gD", "<cmd>lua vim.lsp.buf.implementation()<CR>" },
-    { "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
-    { "gp", "<cmd>lua vim.diagnostic.open_float()<CR>" },
-    { "<leader>fo", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>" },
+    { "gd", vim.lsp.buf.definition },
+    { "gh", vim.lsp.buf.hover },
+    { "gD", vim.lsp.buf.implementation },
+    { "gk", vim.lsp.buf.signature_help },
+    { "gp", vim.diagnostic.open_float },
+    {
+      "<leader>fo",
+      function()
+        vim.lsp.buf.format({ async = true })
+      end,
+    },
   },
   dependencies = {
     "folke/neodev.nvim",

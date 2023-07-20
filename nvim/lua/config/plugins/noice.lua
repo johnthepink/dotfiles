@@ -2,7 +2,12 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   keys = {
-    { "<leader>c", "<cmd>Noice dismiss<cr>" },
+    {
+      "<leader>c",
+      function()
+        require("noice").cmd("dismiss")
+      end,
+    },
   },
   config = function()
     require("noice").setup({

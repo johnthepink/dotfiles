@@ -2,7 +2,12 @@ local bufferline = {
   "akinsho/bufferline.nvim",
   event = "BufReadPre",
   keys = {
-    { "gb", ":BufferLinePick<cr>" },
+    {
+      "gb",
+      function()
+        require("bufferline").pick()
+      end,
+    },
   },
 }
 
