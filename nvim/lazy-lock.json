@@ -30,7 +30,7 @@
   "telescope.nvim": { "branch": "master", "commit": "22735947d84d78f29436c203f0a4b8dc15dda204" },
   "toggle-checkbox.nvim": { "branch": "main", "commit": "856b3d99cde6eac0a0ab6085d2a5fca695b02352" },
   "tokyonight.nvim": { "branch": "main", "commit": "1ee11019f8a81dac989ae1db1a013e3d582e2033" },
-  "trouble.nvim": { "branch": "main", "commit": "fc4bb22b1d2cd5eb46fe61a9f6d6416d742beb5c" },
+  "trouble.nvim": { "branch": "main", "commit": "ab6dd3ffb7101d4999b6b03f93317ee99ae85fb6" },
   "true-zen.nvim": { "branch": "main", "commit": "2b9e210e0d1a735e1fa85ec22190115dffd963aa" },
   "vim-tmux-navigator": { "branch": "master", "commit": "cdd66d6a37d991bba7997d593586fc51a5b37aa8" }
 }
