@@ -11,6 +11,7 @@ return {
       "graphql",
       "hcl",
       "html",
+      "java",
       "javascript",
       "json",
       "markdown",
