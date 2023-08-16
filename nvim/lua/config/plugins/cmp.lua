@@ -3,10 +3,12 @@ local M = {
   event = "InsertEnter",
   dependencies = {
     "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "onsails/lspkind.nvim",
     "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
     "David-Kunz/cmp-npm",
   },
 }
@@ -15,7 +17,6 @@ function M.config()
   local cmp = require("cmp")
 
   cmp.setup({
-    auto_select = false,
     snippet = {
       expand = function(args)
         require("luasnip").lsp_expand(args.body)
@@ -29,31 +30,27 @@ function M.config()
       ["<C-e>"] = cmp.mapping.close(),
       --['<CR>'] = cmp.mapping.confirm({ select = false }),
       ["<C-y>"] = cmp.mapping.confirm({
-        behavior = cmp.ConfirmBehavior.Insert,
         select = true,
       }),
     }),
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
       { name = "path" },
-      { name = "luasnip" },
       { name = "buffer", keywork_length = 5 },
       { name = "npm", keyword_length = 4 },
-      { name = "neorg" },
     }),
     formatting = {
-      -- format = require('lspkind').cmp_format {
-      --   with_text = true,
-      --   menu = {
-      --     buffer = "[buf]",
-      --     nvim_lsp = "[LSP]",
-      --     path = "[path]",
-      --     luasnip = "[snip]"
-      --   }
-      -- }
+      format = require("lspkind").cmp_format({
+        mode = "symbol",
+        menu = {
+          buffer = "buf",
+          nvim_lsp = "lsp",
+          path = "path",
+          npm = "npm",
+        },
+      }),
     },
     experimental = {
-      native_menu = false,
       ghost_text = true,
     },
   })
