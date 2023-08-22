@@ -31,7 +31,7 @@ return {
     },
   },
   opts = {
-    enable_diagnostics = false,
+    enable_diagnostics = true,
     window = {
       width = 40,
       mappings = {
@@ -57,12 +57,22 @@ return {
     },
   },
   init = function()
+    local augroup = vim.api.nvim_create_augroup
+    local autocmd = vim.api.nvim_create_autocmd
+
     vim.g.neo_tree_remove_legacy_commands = 1
-    if vim.fn.argc() == 1 then
-      local stat = vim.loop.fs_stat(tostring(vim.fn.argv(0)))
-      if stat and stat.type == "directory" then
-        require("neo-tree.command").execute({ toggle = true, reveal = true })
-      end
-    end
+
+    autocmd("VimEnter", {
+      group = augroup("Enter", {}),
+      nested = true,
+      callback = function()
+        if vim.fn.argc() == 1 then
+          local stat = vim.loop.fs_stat(tostring(vim.fn.argv(0)))
+          if stat and stat.type == "directory" then
+            require("neo-tree.command").execute({ toggle = true, reveal = true })
+          end
+        end
+      end,
+    })
   end,
 }
