@@ -60,6 +60,7 @@ function M.config()
     cmd = { "/Users/john/code/lua-language-server/bin/lua-language-server" },
   })
   lsp.solargraph.setup({})
+  lsp.graphql.setup({})
 
   local nls = require("config/plugins/null-ls")
   nls.setup()
