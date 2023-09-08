@@ -13,6 +13,7 @@ local M = {
         vim.lsp.buf.format({ async = true })
       end,
     },
+    { "<leader>fi" },
   },
   dependencies = {
     "folke/neodev.nvim",
@@ -38,8 +39,28 @@ function M.config()
 
   M.diagnostics()
 
+  local function organize_imports()
+    local params = {
+      command = "_typescript.organizeImports",
+      arguments = { vim.api.nvim_buf_get_name(0) },
+      title = "",
+    }
+    vim.lsp.buf.execute_command(params)
+  end
+
+  vim.keymap.set("n", "<leader>fi", function()
+    organize_imports()
+  end)
+
   local lsp = require("lspconfig")
-  lsp.tsserver.setup({})
+  lsp.tsserver.setup({
+    commands = {
+      OrganizeImports = {
+        organize_imports,
+        description = "Organize Imports",
+      },
+    },
+  })
   lsp.eslint.setup({
     filetypes = {
       -- defaults
