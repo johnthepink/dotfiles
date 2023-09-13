@@ -34,33 +34,26 @@ function M.diagnostics()
   end
 end
 
+function M.organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 function M.config()
   require("neodev").setup({})
 
   M.diagnostics()
 
-  local function organize_imports()
-    local params = {
-      command = "_typescript.organizeImports",
-      arguments = { vim.api.nvim_buf_get_name(0) },
-      title = "",
-    }
-    vim.lsp.buf.execute_command(params)
-  end
-
   vim.keymap.set("n", "<leader>fi", function()
-    organize_imports()
+    M.organize_imports()
   end)
 
   local lsp = require("lspconfig")
-  lsp.tsserver.setup({
-    commands = {
-      OrganizeImports = {
-        organize_imports,
-        description = "Organize Imports",
-      },
-    },
-  })
+  lsp.tsserver.setup({})
   lsp.eslint.setup({
     filetypes = {
       -- defaults
