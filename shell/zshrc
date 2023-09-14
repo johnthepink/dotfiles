@@ -1,7 +1,9 @@
-for file in ~/.dotfiles/shell/{aliases,functions,prompt,completions,directories}; do
+for file in ~/.dotfiles/shell/{aliases,functions,completions,directories}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
+
+eval "$(starship init zsh)"
 
 export EDITOR="nvim"
 export SHELL="zsh"

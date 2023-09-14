@@ -1,3 +1,4 @@
+#!/bin/sh
 zstyle ':completion:*:*:*:*:*' menu select
 
 # Complete . and .. special directories
