@@ -3,8 +3,6 @@ for file in ~/.dotfiles/shell/{aliases,functions,completions,directories}; do
 done
 unset file
 
-eval "$(starship init zsh)"
-
 export EDITOR="nvim"
 export SHELL="zsh"
 export LANG="en_US.UTF-8"
@@ -18,6 +16,9 @@ export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browse
 
 # set path for homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)" 
+
+# prompt
+eval "$(starship init zsh)"
 
 # Use emacs key bindings
 bindkey -e
