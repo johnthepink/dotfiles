@@ -9,7 +9,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "ff01d34daaed72f271a8ffa088a7e839a60c640f" },
-  "lazy.nvim": { "branch": "main", "commit": "b9c604e839e854bc999e99b90319f1b49776aeac" },
+  "lazy.nvim": { "branch": "main", "commit": "f73986546cadecbcc0531c14b73d4e2cd679d672" },
   "lspkind.nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "lualine.nvim": { "branch": "master", "commit": "45e27ca739c7be6c49e5496d14fcf45a303c3a63" },
   "mini.nvim": { "branch": "main", "commit": "22f3f4396b4ec90c4c83b69f47e14d71b4c6c69f" },
