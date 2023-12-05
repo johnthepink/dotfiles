@@ -74,6 +74,7 @@ function M.config()
     cmd = { "/Users/john/code/lua-language-server/bin/lua-language-server" },
   })
   lsp.ruby_ls.setup({})
+  lsp.rubocop.setup({})
   lsp.graphql.setup({})
 
   local nls = require("config/plugins/null-ls")
