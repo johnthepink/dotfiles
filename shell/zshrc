@@ -32,9 +32,10 @@ source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-h
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="$(yarn global bin):$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 export PATH="/Users/john/Library/Android/sdk/platform-tools:$PATH"
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # my bin
 export PATH=$PATH:~/.dotfiles/bin
