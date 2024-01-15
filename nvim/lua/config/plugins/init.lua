@@ -35,15 +35,6 @@ return {
     config = true,
   },
   {
-    "karb94/neoscroll.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-    event = "VeryLazy",
-  },
-  {
     "opdavies/toggle-checkbox.nvim",
     keys = {
       "<leader>tt",
