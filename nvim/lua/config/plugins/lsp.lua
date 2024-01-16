@@ -53,7 +53,9 @@ function M.config()
   end)
 
   local lsp = require("lspconfig")
+  -- npm i -g neovim typescript typescript-language-server
   lsp.tsserver.setup({})
+  -- npm i -g vscode-langservers-extracted
   lsp.eslint.setup({
     filetypes = {
       -- defaults
@@ -73,8 +75,11 @@ function M.config()
   lsp.lua_ls.setup({
     cmd = { "/Users/john/code/lua-language-server/bin/lua-language-server" },
   })
+  -- gem install neovim ruby-lsp
   lsp.ruby_ls.setup({})
+  -- gem install rubocop
   lsp.rubocop.setup({})
+  -- npm i -g graphql-language-service-cli
   lsp.graphql.setup({})
 
   local nls = require("config/plugins/null-ls")
