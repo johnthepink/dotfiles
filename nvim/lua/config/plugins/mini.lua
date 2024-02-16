@@ -3,7 +3,10 @@ local mini = {
   event = "VeryLazy",
 }
 
-local specs = { mini, "JoosepAlviste/nvim-ts-context-commentstring" }
+local specs = {
+  mini,
+  { "JoosepAlviste/nvim-ts-context-commentstring", opts = { enable_autocmd = false } }
+}
 
 function mini.surround()
   require("mini.surround").setup({})
@@ -13,7 +16,7 @@ function mini.comment()
   require("mini.comment").setup({
     options = {
       custom_commentstring = function()
-        return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
+        return require("ts_context_commentstring").calculate_commentstring() or vim.bo.commentstring
       end,
     },
   })
