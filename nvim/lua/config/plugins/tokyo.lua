@@ -10,6 +10,9 @@ local tokyo = {
       colors.gitSigns.delete = colors.red
       colors.gitSigns.change = colors.orange
     end,
+    on_highlights = function(highlights)
+      highlights["@tag.tsx"].fg = '#2ac3de'
+    end
   },
 }
 
