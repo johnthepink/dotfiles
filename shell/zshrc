@@ -55,3 +55,10 @@ export FZF_DEFAULT_OPTS="--ansi --color 16"
 source $HOME/.zshrc.local
 
 pokemon-colorscripts -r
+
+# bun completions
+[ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
