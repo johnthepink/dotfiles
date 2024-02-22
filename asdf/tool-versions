@@ -1,6 +1,7 @@
-ruby 3.3.0
-nodejs 20.11.0
-yarn 1.22.19
 aws-iam-authenticator 0.6.2
-kubectl 1.27.1
 java adoptopenjdk-11.0.15+10
+kubectl 1.27.1
+nodejs 20.11.0
+python 3.12.2
+ruby 3.3.0
+yarn 1.22.19
