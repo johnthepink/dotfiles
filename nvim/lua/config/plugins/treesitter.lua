@@ -14,6 +14,7 @@ return {
       "java",
       "javascript",
       "json",
+      "make",
       "markdown",
       "markdown_inline",
       "prisma",
