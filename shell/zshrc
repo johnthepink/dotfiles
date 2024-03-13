@@ -37,6 +37,8 @@ export PATH="/Users/john/Library/Android/sdk/platform-tools:$PATH"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+export PATH="/opt/webOS_Signage_SDK/CLI/bin:$PATH"
+
 # my bin
 export PATH=$PATH:~/.dotfiles/bin
 
