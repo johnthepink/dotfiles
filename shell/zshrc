@@ -4,7 +4,7 @@ done
 unset file
 
 export EDITOR="nvim"
-export SHELL="zsh"
+export SHELL="/bin/zsh"
 export LANG="en_US.UTF-8"
 export CLICOLOR=1
 export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
