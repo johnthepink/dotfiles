@@ -35,7 +35,7 @@ export PATH="$(yarn global bin):$PATH"
 
 export PATH="/Users/john/Library/Android/sdk/platform-tools:$PATH"
 
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 
 export PATH="/opt/webOS_Signage_SDK/CLI/bin:$PATH"
 
@@ -49,7 +49,7 @@ fi
 
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_DEFAULT_OPTS="--ansi --color 16"
-source /opt/homebrew/opt/fzf/shell/completion.zsh
+source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
 
 . "$HOME/.asdf/asdf.sh"
 
