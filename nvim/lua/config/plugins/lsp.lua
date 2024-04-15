@@ -76,7 +76,7 @@ function M.config()
     cmd = { "/Users/john/code/lua-language-server/bin/lua-language-server" },
   })
   -- gem install neovim ruby-lsp
-  lsp.ruby_ls.setup({})
+  lsp.ruby_lsp.setup({})
   -- gem install rubocop
   lsp.rubocop.setup({})
   -- npm i -g graphql-language-service-cli
