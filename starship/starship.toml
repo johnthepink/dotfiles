@@ -1,7 +1,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = '$all$directory$character'
+# show newline after $all unless nothing to show
+format = """($all
+)$directory$character"""
 command_timeout = 1000
+
+# line break included in format after $all
+[line_break]
+disabled = true
 
 [aws]
 disabled = true
