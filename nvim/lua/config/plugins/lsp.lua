@@ -15,9 +15,6 @@ local M = {
     },
     { "<leader>fi" },
   },
-  dependencies = {
-    "folke/neodev.nvim",
-  },
 }
 
 function M.diagnostics()
@@ -44,8 +41,6 @@ function M.organize_imports()
 end
 
 function M.config()
-  require("neodev").setup({})
-
   M.diagnostics()
 
   vim.keymap.set("n", "<leader>fi", function()
