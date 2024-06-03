@@ -11,6 +11,13 @@ local M = {
     "hrsh7th/cmp-nvim-lsp",
     "David-Kunz/cmp-npm",
   },
+  opts = function(_, opts)
+    opts.sources = opts.sources or {}
+    table.insert(opts.sources, {
+      name = "lazydev",
+      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+    })
+  end,
 }
 
 function M.config()
@@ -36,8 +43,8 @@ function M.config()
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
       { name = "path" },
-      { name = "buffer", keywork_length = 5 },
-      { name = "npm", keyword_length = 4 },
+      { name = "buffer",  keywork_length = 5 },
+      { name = "npm",     keyword_length = 4 },
     }),
     formatting = {
       format = require("lspkind").cmp_format({
