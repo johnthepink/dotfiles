@@ -23,7 +23,7 @@
   "nvim-colorizer.lua": { "branch": "master", "commit": "85855b38011114929f4058efc97af1059ab3e41d" },
   "nvim-lspconfig": { "branch": "master", "commit": "4d38bece98300e3e5cd24a9aa0d0ebfea4951c16" },
   "nvim-notify": { "branch": "master", "commit": "d333b6f167900f6d9d42a59005d82919830626bf" },
-  "nvim-treesitter": { "branch": "master", "commit": "9636d5a3f4f531256fba147a30b882c44f28fae1" },
+  "nvim-treesitter": { "branch": "master", "commit": "cdc613c630598779dc9f975bae12a4dc7c001950" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "cb064386e667def1d241317deed9fd1b38f0dc2e" },
   "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
@@ -32,7 +32,7 @@
   "telescope.nvim": { "branch": "master", "commit": "f12b15e1b3a33524eb06a1ae7bc852fb1fd92197" },
   "toggle-checkbox.nvim": { "branch": "main", "commit": "58f958a2dcfb974963d4bb772ad8c3d8a1c62774" },
   "tokyonight.nvim": { "branch": "main", "commit": "81c867c5f638597a82c82094dcb90ed42444dabc" },
-  "trouble.nvim": { "branch": "main", "commit": "60b0ac3772e991bc194207afc28368a5f15d913a" },
+  "trouble.nvim": { "branch": "main", "commit": "e0b35a273df58b03612255783cf475a782ede7e0" },
   "true-zen.nvim": { "branch": "main", "commit": "2b9e210e0d1a735e1fa85ec22190115dffd963aa" },
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" }
 }
