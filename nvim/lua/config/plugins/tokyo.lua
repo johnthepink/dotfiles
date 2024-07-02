@@ -5,11 +5,6 @@ local tokyo = {
   opts = {
     style = "storm",
     lualine_bold = true,
-    on_colors = function(colors)
-      colors.gitSigns.add = colors.green
-      colors.gitSigns.delete = colors.red
-      colors.gitSigns.change = colors.orange
-    end,
   },
 }
 
