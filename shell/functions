@@ -10,7 +10,7 @@ function tmup() {
 }
 
 function jme() {
-  jira issue list -a "$(jira me)" -s~Done --columns TYPE,KEY,SUMMARY,STATUS,PRIORITY,LABELS
+  jira issue list -a $(jira me) -s~Done --columns TYPE,KEY,SUMMARY,STATUS,PRIORITY,LABELS
 }
 
 function ji() {
@@ -19,4 +19,10 @@ function ji() {
 
 function jo() {
   jira open "$1"
+}
+
+function jc() {
+  echo '📂 copying in progress item to clipboard...'
+  jira issue list -a $(jira me) -s 'In Progress' --paginate 1 --plain --no-headers --columns KEY | tr -d '\n' | pbcopy
+  echo $(pbpaste)
 }
