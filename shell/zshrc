@@ -25,7 +25,7 @@ bindkey -e
 # make delete key delete
 bindkey "^[[3~" delete-char
 
-bindkey -s ^t "^utmux-sessionizer\n"
+# bindkey -s ^t "^utmux-sessionizer\n"
 bindkey -s ^g "^urepome\n"
 
 source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
