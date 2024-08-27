@@ -1,9 +1,9 @@
 return {
   "nvim-tree/nvim-web-devicons",
-  -- {
-  --   "christoomey/vim-tmux-navigator",
-  --   event = "VeryLazy",
-  -- },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+  },
   {
     'mrjones2014/smart-splits.nvim',
     opts = {
