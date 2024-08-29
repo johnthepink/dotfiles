@@ -17,20 +17,6 @@ local M = {
   },
 }
 
-function M.diagnostics()
-  -- Automatically update diagnostics
-  vim.diagnostic.config({
-    virtual_text = { spacing = 4, prefix = "●" },
-    severity_sort = true,
-  })
-
-  local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = " ", Info = " " }
-  for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-  end
-end
-
 function M.organize_imports()
   local params = {
     command = "_typescript.organizeImports",
@@ -41,8 +27,6 @@ function M.organize_imports()
 end
 
 function M.config()
-  M.diagnostics()
-
   vim.keymap.set("n", "<leader>fi", function()
     M.organize_imports()
   end)
