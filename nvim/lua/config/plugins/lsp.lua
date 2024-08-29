@@ -49,7 +49,34 @@ function M.config()
 
   local lsp = require("lspconfig")
   -- npm i -g neovim typescript typescript-language-server
-  lsp.tsserver.setup({})
+  lsp.tsserver.setup({
+    settings = {
+      typescript = {
+        inlayHints = {
+          includeInlayParameterNameHints = "all",
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = false,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
+      javascript = {
+        inlayHints = {
+          includeInlayParameterNameHints = "all",
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = false,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
+    }
+  })
   -- npm i -g vscode-langservers-extracted
   lsp.eslint.setup({
     filetypes = {
@@ -79,6 +106,8 @@ function M.config()
 
   local nls = require("config/plugins/null-ls")
   nls.setup()
+
+  vim.lsp.inlay_hint.enable(true);
 end
 
 return M
