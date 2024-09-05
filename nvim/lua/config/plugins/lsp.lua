@@ -33,7 +33,7 @@ function M.config()
 
   local lsp = require("lspconfig")
   -- npm i -g neovim typescript typescript-language-server
-  lsp.tsserver.setup({
+  lsp.ts_ls.setup({
     settings = {
       typescript = {
         inlayHints = {
