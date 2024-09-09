@@ -19,6 +19,7 @@ return {
       "java",
       "javascript",
       "json",
+      "latex",
       "make",
       "markdown",
       "markdown_inline",
