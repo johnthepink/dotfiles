@@ -1,13 +1,7 @@
-for file in ~/.dotfiles/shell/{aliases,functions,completions,directories}; do
-  [ -r "$file" ] && source "$file"
-done
-unset file
-
 export EDITOR="nvim"
 export SHELL="/bin/zsh"
 export LANG="en_US.UTF-8"
 export CLICOLOR=1
-export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
 
 # history file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -16,6 +10,11 @@ export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browse
 
 # set path for homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)" 
+
+for file in ~/.dotfiles/shell/{aliases,functions,completions,directories}; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
 
 # prompt
 eval "$(starship init zsh)"
