@@ -66,6 +66,8 @@ end
 
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 
+config.use_ime = false -- when enabled key repeat breaks input
+
 config.keys = {
   {
     key = 'v',
