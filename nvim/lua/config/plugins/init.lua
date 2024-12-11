@@ -38,7 +38,14 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
-    config = true,
+    config = function()
+      local gitsigns = require('gitsigns')
+      gitsigns.setup({
+        on_attach = function(buffer)
+          vim.keymap.set('n', '<leader>tb', gitsigns.blame, { buffer = buffer })
+        end
+      })
+    end
   },
   {
     "opdavies/toggle-checkbox.nvim",
