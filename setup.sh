@@ -11,6 +11,7 @@ mkdir -p ~/.config
 echo "symlinking main files"
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/git/gitignore ~/.gitignore
+ln -sf ~/.dotfiles/atuin/config.toml ~/.config/atuin/config.toml
 ln -sf ~/.dotfiles/tmux ~/.config/tmux
 ln -sf ~/.dotfiles/bat ~/.config/bat
 ln -sf ~/.dotfiles/kitty ~/.config/kitty

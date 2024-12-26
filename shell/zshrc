@@ -55,10 +55,7 @@ source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
 
 . "$HOME/.asdf/asdf.sh"
 
-# local settings
-source $HOME/.zshrc.local
-
-pokemon-colorscripts -r
+eval "$(atuin init zsh)"
 
 # bun completions
 [ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
@@ -66,3 +63,8 @@ pokemon-colorscripts -r
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# local settings
+source $HOME/.zshrc.local
+
+pokemon-colorscripts -r
