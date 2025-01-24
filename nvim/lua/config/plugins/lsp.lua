@@ -17,23 +17,18 @@ local M = {
   },
 }
 
-function M.organize_imports()
-  local params = {
-    command = "_typescript.organizeImports",
-    arguments = { vim.api.nvim_buf_get_name(0) },
-    title = "",
-  }
-  vim.lsp.buf.execute_command(params)
-end
-
 function M.config()
-  vim.keymap.set("n", "<leader>fi", function()
-    M.organize_imports()
-  end)
-
   local lsp = require("lspconfig")
   -- npm i -g neovim typescript typescript-language-server
   lsp.ts_ls.setup({
+    on_attach = function(client, bufnr)
+      vim.keymap.set("n", "<leader>fi", function()
+        client:exec_cmd({
+          command = "_typescript.organizeImports",
+          arguments = { vim.api.nvim_buf_get_name(bufnr) },
+        })
+      end, { buffer = bufnr })
+    end,
     settings = {
       typescript = {
         inlayHints = {
