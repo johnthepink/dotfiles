@@ -57,6 +57,8 @@ source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
 
 eval "$(atuin init zsh)"
 
+eval "$(colima completion zsh)"
+
 # bun completions
 [ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
 
