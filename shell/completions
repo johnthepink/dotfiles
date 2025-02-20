@@ -33,8 +33,7 @@ zstyle '*' single-ignored show
 
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
-# asdf completions
-fpath=(${ASDF_DIR}/completions $fpath)
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 autoload -Uz compinit
 compinit

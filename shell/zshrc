@@ -53,7 +53,7 @@ export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_DEFAULT_OPTS="--ansi --color 16"
 source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
 
-. "$HOME/.asdf/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 eval "$(atuin init zsh)"
 
