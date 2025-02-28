@@ -1,4 +1,4 @@
-local bufferline = {
+return {
   "akinsho/bufferline.nvim",
   event = "BufReadPre",
   keys = {
@@ -9,18 +9,11 @@ local bufferline = {
       end,
     },
   },
-}
-
-function bufferline.config()
-  vim.api.nvim_exec([[let $KITTY_WINDOW_ID=0]], true)
-
-  require("bufferline").setup({
+  opts = {
     options = {
       offsets = {
         { filetype = "neo-tree" },
       },
     },
-  })
-end
-
-return bufferline
+  },
+}
