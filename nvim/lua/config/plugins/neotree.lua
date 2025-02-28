@@ -1,6 +1,9 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
+  -- this commit breaks opening a folder
+  -- https://github.com/nvim-neo-tree/neo-tree.nvim/commit/521bb4253b1adc2a1ff6c584bc839eba9bc99c0b
+  commit = "60c8f77cc35f9a52b7ee8da5df5555bd0e41b9f4",
   cmd = "Neotree",
   dependencies = {
     "nvim-lua/plenary.nvim",
