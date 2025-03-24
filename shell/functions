@@ -25,6 +25,10 @@ function jc() {
   jira issue list -a $(jira me) -s 'In Progress' --paginate 1 --plain --no-headers --columns KEY | tr -d '\n'
 }
 
+function jic() {
+  jira issue view $(jc)
+}
+
 function jcy() {
   echo '📂 copying in progress item to clipboard...'
   jira issue list -a $(jira me) -s 'In Progress' --paginate 1 --plain --no-headers --columns KEY | tr -d '\n' | pbcopy
