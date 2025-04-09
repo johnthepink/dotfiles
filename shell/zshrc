@@ -55,7 +55,7 @@ source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 eval "$(colima completion zsh)"
 
