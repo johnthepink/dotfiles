@@ -8,6 +8,7 @@ alias ts="tmux-sessionizer"
 # git
 alias git=hub
 alias __git=hub # fix hub autocomplete
+alias lg=lazygit
 
 # vim
 alias v="nvim"
