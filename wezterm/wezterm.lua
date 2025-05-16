@@ -29,6 +29,7 @@ config.font = wezterm.font('JetBrainsMono Nerd Font')
 config.tab_bar_at_bottom = true
 config.show_tab_index_in_tab_bar = false
 config.native_macos_fullscreen_mode = true
+config.scrollback_lines = 10000
 
 config.window_frame = {
   font = wezterm.font({ family = 'JetBrainsMono Nerd Font', weight = 'Bold' }),
@@ -101,7 +102,7 @@ config.keys = {
   {
     key = 'f',
     mods = 'LEADER',
-    action = wezterm.action.ShowLauncherArgs({ flags = 'FUZZY|WORKSPACES' })
+    action = wezterm.action.ShowLauncherArgs({ flags = 'FUZZY|WORKSPACES' }),
   },
   {
     key = 'x',
@@ -126,7 +127,7 @@ config.keys = {
   {
     key = 'f',
     mods = 'CMD|CTRL',
-    action = wezterm.action.ToggleFullScreen
+    action = wezterm.action.ToggleFullScreen,
   },
 }
 
