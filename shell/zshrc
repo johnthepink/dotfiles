@@ -69,4 +69,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # local settings
 source $HOME/.zshrc.local
 
-pokemon-colorscripts -r
+# pokemon-colorscripts -r
