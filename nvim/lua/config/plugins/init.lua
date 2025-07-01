@@ -1,9 +1,5 @@
 return {
-  "nvim-tree/nvim-web-devicons",
-  {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
-  },
+  'nvim-tree/nvim-web-devicons',
   {
     'mrjones2014/smart-splits.nvim',
     opts = {
@@ -11,50 +7,50 @@ return {
     },
   },
   {
-    "ruifm/gitlinker.nvim",
+    'ruifm/gitlinker.nvim',
     keys = {
-      "<leader>gy",
-      "<leader>gb",
-      { "<leader>gy", mode = "v" },
-      { "<leader>gb", mode = "v" },
+      '<leader>gy',
+      '<leader>gb',
+      { '<leader>gy', mode = 'v' },
+      { '<leader>gb', mode = 'v' },
     },
     config = function()
-      local gitlinker = require("gitlinker")
-      local open_in_browser = require("gitlinker.actions").open_in_browser
+      local gitlinker = require('gitlinker')
+      local open_in_browser = require('gitlinker.actions').open_in_browser
       gitlinker.setup({
         opts = {
           add_current_line_on_normal_mode = false,
         },
       })
 
-      vim.keymap.set("n", "<leader>gb", function()
-        gitlinker.get_buf_range_url("n", { action_callback = open_in_browser })
+      vim.keymap.set('n', '<leader>gb', function()
+        gitlinker.get_buf_range_url('n', { action_callback = open_in_browser })
       end)
-      vim.keymap.set("v", "<leader>gb", function()
-        gitlinker.get_buf_range_url("v", { action_callback = open_in_browser })
+      vim.keymap.set('v', '<leader>gb', function()
+        gitlinker.get_buf_range_url('v', { action_callback = open_in_browser })
       end)
     end,
   },
   {
-    "lewis6991/gitsigns.nvim",
-    event = "BufReadPre",
+    'lewis6991/gitsigns.nvim',
+    event = 'BufReadPre',
     config = function()
       local gitsigns = require('gitsigns')
       gitsigns.setup({
         on_attach = function(buffer)
           vim.keymap.set('n', '<leader>tb', gitsigns.blame, { buffer = buffer })
-        end
+        end,
       })
-    end
+    end,
   },
   {
-    "opdavies/toggle-checkbox.nvim",
+    'opdavies/toggle-checkbox.nvim',
     keys = {
-      "<leader>tt",
+      '<leader>tt',
     },
     config = function()
-      local tc = require("toggle-checkbox")
-      vim.keymap.set("n", "<leader>tt", function()
+      local tc = require('toggle-checkbox')
+      vim.keymap.set('n', '<leader>tt', function()
         tc.toggle()
       end)
     end,
