@@ -18,6 +18,7 @@ ln -sf ~/.dotfiles/kitty ~/.config/kitty
 ln -sf ~/.dotfiles/wezterm ~/.config/wezterm
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
+ln -sf ~/.dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 ln -sf ~/.dotfiles/bin ~/bin
 ln -sf ~/.dotfiles/shell/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/shell/zshrc ~/.zshrc
