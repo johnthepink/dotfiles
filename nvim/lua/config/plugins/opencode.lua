@@ -4,20 +4,11 @@ return {
     'folke/snacks.nvim',
   },
   opts = {
-    win = {
-      wo = {
-        winbar = '',
-      },
-    },
+    model_id = 'claude-sonnet-4-20250514',
+    provider_id = 'anthropic',
+    auto_reload = true,
   },
   keys = {
-    {
-      '<leader>ot',
-      function()
-        require('opencode').toggle()
-      end,
-      desc = 'Toggle opencode',
-    },
     {
       '<leader>oa',
       function()
@@ -33,13 +24,6 @@ return {
       end,
       desc = 'Ask opencode about current file',
       mode = { 'n', 'v' },
-    },
-    {
-      '<leader>on',
-      function()
-        require('opencode').command('/new')
-      end,
-      desc = 'New session',
     },
     {
       '<leader>oe',
