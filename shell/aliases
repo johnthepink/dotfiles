@@ -12,7 +12,7 @@ alias lg=lazygit
 
 # vim
 alias v="nvim"
-alias v.="v ."
+alias v.="v"
 
 # others
 alias cat=bat
