@@ -201,4 +201,12 @@ config.keys = {
   },
 }
 
+local index_offset = config.tab_and_split_indices_are_zero_based and 0 or 1
+for i = index_offset, 9 do
+  table.insert(
+    config.keys,
+    { key = tostring(i), mods = 'LEADER', action = wezterm.action.ActivateTab(i - index_offset) }
+  )
+end
+
 return config
