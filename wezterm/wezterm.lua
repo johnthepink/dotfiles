@@ -77,7 +77,8 @@ end)
 
 config.font_size = 16
 config.font = wezterm.font('JetBrainsMono Nerd Font')
-config.native_macos_fullscreen_mode = true
+config.native_macos_fullscreen_mode = false
+config.macos_fullscreen_extend_behind_notch = true
 config.scrollback_lines = 10000
 
 config.window_frame = {
