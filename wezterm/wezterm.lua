@@ -155,9 +155,24 @@ config.keys = {
     action = wezterm.action.ShowLauncherArgs({ flags = 'FUZZY|WORKSPACES' }),
   },
   {
-    key = 'x',
+    key = '[',
     mods = 'LEADER',
     action = wezterm.action.ActivateCopyMode,
+  },
+  {
+    key = ' ',
+    mods = 'LEADER',
+    action = wezterm.action.QuickSelect,
+  },
+  {
+    key = 'x',
+    mods = 'LEADER',
+    action = wezterm.action.CloseCurrentPane({ confirm = true }),
+  },
+  {
+    key = 'q',
+    mods = 'LEADER',
+    action = wezterm.action.PaneSelect({ mode = 'Activate' }),
   },
   {
     key = 'n',
@@ -168,6 +183,11 @@ config.keys = {
     key = 'p',
     mods = 'LEADER',
     action = wezterm.action.ActivateTabRelative(-1),
+  },
+  {
+    key = 'l',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateLastTab,
   },
   {
     key = 'z',
