@@ -28,6 +28,7 @@ return {
       'python',
       'regex',
       'ruby',
+      'rust',
       'ssh_config',
       'sql',
       'terraform',

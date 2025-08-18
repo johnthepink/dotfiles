@@ -44,6 +44,9 @@ export PATH="/Users/john/tizen-studio/tools/ide/bin:$PATH"
 # my bin
 export PATH=$PATH:~/.dotfiles/bin
 
+# rust bin
+export PATH=$PATH:~/.cargo/bin
+
 # Add the following to your shell init to set up gpg-agent automatically for every shell
 if ! [ -n "$(pgrep gpg-agent)" ]; then
   eval $(gpg-agent --daemon)
