@@ -1,22 +1,22 @@
 local mini = {
-  "echasnovski/mini.nvim",
-  event = "VeryLazy",
+  'nvim-mini/mini.nvim',
+  event = 'VeryLazy',
 }
 
 local specs = {
   mini,
-  { "JoosepAlviste/nvim-ts-context-commentstring", opts = { enable_autocmd = false } }
+  { 'JoosepAlviste/nvim-ts-context-commentstring', opts = { enable_autocmd = false } },
 }
 
 function mini.surround()
-  require("mini.surround").setup({})
+  require('mini.surround').setup({})
 end
 
 function mini.comment()
-  require("mini.comment").setup({
+  require('mini.comment').setup({
     options = {
       custom_commentstring = function()
-        return require("ts_context_commentstring").calculate_commentstring() or vim.bo.commentstring
+        return require('ts_context_commentstring').calculate_commentstring() or vim.bo.commentstring
       end,
     },
   })
