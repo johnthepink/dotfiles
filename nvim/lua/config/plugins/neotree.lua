@@ -31,6 +31,7 @@ return {
     },
   },
   opts = {
+    hijack_netrw_behavior = 'open_default',
     enable_diagnostics = true,
     window = {
       width = 40,
@@ -65,8 +66,16 @@ return {
     autocmd('VimEnter', {
       group = augroup('Enter', {}),
       nested = true,
-      callback = function()
-        require('neo-tree.command').execute({ toggle = true, reveal = true })
+      callback = function(data)
+        local directory = vim.fn.isdirectory(data.file) == 1
+
+        if directory then
+          vim.cmd.enew()
+          vim.cmd.bdelete(data.buf)
+          vim.cmd.cd(data.file)
+
+          require('neo-tree.command').execute({ toggle = true, reveal = true })
+        end
       end,
     })
   end,
