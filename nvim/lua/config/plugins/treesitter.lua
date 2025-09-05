@@ -35,6 +35,7 @@ return {
       'tsx',
       'typescript',
       'yaml',
+      'xml',
       -- these are required since neovim 0.8
       'c',
       'lua',
