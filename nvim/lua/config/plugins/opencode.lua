@@ -1,12 +1,7 @@
 return {
   'NickvanDyke/opencode.nvim',
   dependencies = {
-    'folke/snacks.nvim',
-  },
-  opts = {
-    model_id = 'claude-sonnet-4-20250514',
-    provider_id = 'anthropic',
-    auto_reload = true,
+    { 'folke/snacks.nvim', opts = { input = { enabled = true } } },
   },
   keys = {
     {
