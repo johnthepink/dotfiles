@@ -18,72 +18,20 @@ local M = {
 }
 
 function M.config()
-  local lsp = require('lspconfig')
-  -- npm i -g neovim typescript typescript-language-server
-  lsp.ts_ls.setup({
-    on_attach = function(client, bufnr)
-      vim.keymap.set('n', '<leader>fi', function()
-        client:exec_cmd({
-          command = '_typescript.organizeImports',
-          arguments = { vim.api.nvim_buf_get_name(bufnr) },
-        })
-      end, { buffer = bufnr })
-    end,
-    settings = {
-      typescript = {
-        inlayHints = {
-          includeInlayParameterNameHints = 'all',
-          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = false,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
-      },
-      javascript = {
-        inlayHints = {
-          includeInlayParameterNameHints = 'all',
-          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = false,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
-      },
-    },
-  })
-  -- npm i -g vscode-langservers-extracted
-  lsp.eslint.setup({
-    filetypes = {
-      -- defaults
-      'javascript',
-      'javascriptreact',
-      'javascript.jsx',
-      'typescript',
-      'typescriptreact',
-      'typescript.tsx',
-      'vue',
-      'svelte',
-      'astro',
-      -- added
-      'graphql',
-    },
-  })
-  lsp.lua_ls.setup({
-    cmd = { '/Users/john/code/lua-language-server/bin/lua-language-server' },
-  })
-  -- gem install neovim ruby-lsp
-  lsp.ruby_lsp.setup({})
-  -- gem install rubocop
-  lsp.rubocop.setup({})
-  -- npm i -g graphql-language-service-cli
-  lsp.graphql.setup({})
+  local enable = vim.lsp.enable
 
-  lsp.rust_analyzer.setup({})
+  -- npm i -g neovim typescript typescript-language-server
+  enable('ts_ls')
+  -- npm i -g vscode-langservers-extracted
+  enable('eslint')
+  enable('lua_ls')
+  -- gem install neovim ruby-lsp
+  enable('ruby_lsp')
+  -- gem install rubocop
+  enable('ruby_lsp')
+  -- npm i -g graphql-language-service-cli
+  enable('graphql')
+  enable('rust_analyzer')
 
   local nls = require('config/plugins/null-ls')
   nls.setup()
