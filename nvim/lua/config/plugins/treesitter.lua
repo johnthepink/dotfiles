@@ -16,6 +16,7 @@ return {
       'gitignore',
       'graphql',
       'hcl',
+      'helm',
       'html',
       'java',
       'javascript',

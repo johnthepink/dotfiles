@@ -32,6 +32,8 @@ function M.config()
   -- npm i -g graphql-language-service-cli
   enable('graphql')
   enable('rust_analyzer')
+  -- brew install helm-ls && npm i -g yaml-language-server
+  enable('helm_ls')
 
   local nls = require('config/plugins/null-ls')
   nls.setup()

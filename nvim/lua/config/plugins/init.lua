@@ -55,4 +55,5 @@ return {
       end)
     end,
   },
+  { 'qvalentin/helm-ls.nvim', ft = 'helm' },
 }
