@@ -28,7 +28,7 @@ function M.config()
   -- gem install neovim ruby-lsp
   enable('ruby_lsp')
   -- gem install rubocop
-  enable('ruby_lsp')
+  enable('rubocop')
   -- npm i -g graphql-language-service-cli
   enable('graphql')
   enable('rust_analyzer')
