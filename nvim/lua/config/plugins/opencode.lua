@@ -3,67 +3,33 @@ return {
   dependencies = {
     { 'folke/snacks.nvim', opts = { input = { enabled = true } } },
   },
+  config = function()
+    vim.opt.autoread = true
+  end,
   keys = {
     {
       '<leader>oa',
       function()
-        require('opencode').ask()
+        require('opencode').ask('@this: ', { submit = true })
       end,
-      desc = 'Ask opencode',
+      desc = 'Ask about this',
       mode = { 'n', 'v' },
     },
     {
-      '<leader>oA',
+      '<leader>os',
       function()
-        require('opencode').ask('@file ')
+        require('opencode').select()
       end,
-      desc = 'Ask opencode about current file',
+      desc = 'Select prompt',
       mode = { 'n', 'v' },
     },
     {
-      '<leader>oe',
+      '<leader>o+',
       function()
-        require('opencode').prompt('Explain @cursor and its context')
+        require('opencode').prompt('@this')
       end,
-      desc = 'Explain code near cursor',
-    },
-    {
-      '<leader>or',
-      function()
-        require('opencode').prompt('Review @file for correctness and readability')
-      end,
-      desc = 'Review file',
-    },
-    {
-      '<leader>of',
-      function()
-        require('opencode').prompt('Fix these @diagnostics')
-      end,
-      desc = 'Fix errors',
-    },
-    {
-      '<leader>oo',
-      function()
-        require('opencode').prompt('Optimize @selection for performance and readability')
-      end,
-      desc = 'Optimize selection',
-      mode = 'v',
-    },
-    {
-      '<leader>od',
-      function()
-        require('opencode').prompt('Add documentation comments for @selection')
-      end,
-      desc = 'Document selection',
-      mode = 'v',
-    },
-    {
-      '<leader>ot',
-      function()
-        require('opencode').prompt('Add tests for @selection')
-      end,
-      desc = 'Test selection',
-      mode = 'v',
+      desc = 'Add this',
+      mode = { 'n', 'v' },
     },
   },
 }
