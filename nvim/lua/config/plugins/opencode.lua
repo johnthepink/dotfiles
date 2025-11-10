@@ -1,10 +1,7 @@
 return {
   'NickvanDyke/opencode.nvim',
   dependencies = {
-    {
-      'folke/snacks.nvim',
-      opts = { input = { enabled = true }, picker = { enabled = true }, terminal = { enabled = true } },
-    },
+    'folke/snacks.nvim',
   },
   config = function()
     vim.opt.autoread = true
