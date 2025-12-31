@@ -37,6 +37,7 @@ enabled = true
 
 [credential]
 helper = osxkeychain
+helper = /usr/local/share/gcm-core/git-credential-manager
 
 [commit]
 gpgsign = true
@@ -75,3 +76,8 @@ conflictstyle = diff3
 
 [diff]
 colorMoved = default
+
+[credential "https://dev.azure.com"]
+  useHttpPath = true
+[credential "https://forgejo.jolo.pink"]
+  provider = generic
