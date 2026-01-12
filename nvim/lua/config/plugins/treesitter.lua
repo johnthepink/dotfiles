@@ -14,6 +14,7 @@ return {
       'gitattributes',
       'gitcommit',
       'gitignore',
+      'go',
       'graphql',
       'hcl',
       'helm',

@@ -34,6 +34,8 @@ function M.config()
   enable('rust_analyzer')
   -- brew install helm-ls && npm i -g yaml-language-server
   enable('helm_ls')
+  -- brew install gopls
+  enable('gopls')
 
   local nls = require('config/plugins/null-ls')
   nls.setup()
