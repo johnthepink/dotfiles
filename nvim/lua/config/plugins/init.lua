@@ -17,9 +17,13 @@ return {
     config = function()
       local gitlinker = require('gitlinker')
       local open_in_browser = require('gitlinker.actions').open_in_browser
+      local hosts = require('gitlinker.hosts')
       gitlinker.setup({
         opts = {
           add_current_line_on_normal_mode = false,
+        },
+        callbacks = {
+          ['forgejo.jolo.pink'] = hosts.get_gitea_type_url,
         },
       })
 
