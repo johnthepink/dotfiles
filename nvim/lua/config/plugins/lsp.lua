@@ -36,6 +36,8 @@ function M.config()
   enable('helm_ls')
   -- brew install gopls
   enable('gopls')
+  -- brew install golangci-lint golangci-lint-langserver
+  enable('golangci_lint_ls')
 
   local nls = require('config/plugins/null-ls')
   nls.setup()
