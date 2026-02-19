@@ -14,7 +14,7 @@ config.color_schemes = {
 tabline.setup({
   options = {
     icons_enabled = true,
-    theme = tokyo,
+    theme = appearance.is_dark() and tokyo or 'Tokyo Night Day',
     theme_overrides = {
       tab = {
         active = { bg = tokyo.brights[1] },
