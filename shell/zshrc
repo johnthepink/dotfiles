@@ -62,6 +62,9 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 eval "$(colima completion zsh)"
 
+# kubectl completions
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
 # bun completions
 [ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
 

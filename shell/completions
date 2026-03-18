@@ -38,9 +38,6 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit
 compinit
 
-# kubectl completions
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
-
 __aws_sso_profile_complete() {
      local _args=${AWS_SSO_HELPER_ARGS:- -L error}
     _multi_parts : "($(/opt/homebrew/bin/aws-sso ${=_args} list --csv Profile))"
