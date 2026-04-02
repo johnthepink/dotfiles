@@ -86,6 +86,11 @@ config.window_frame = {
   font_size = 14,
 }
 
+-- opencode will enable cursor blinking when it is open, and it
+-- remains enabled after you close it. this prevents it from happening
+-- if it gets enabled.
+config.cursor_blink_rate = 0
+
 local function is_vim(pane)
   return pane:get_user_vars().IS_NVIM == 'true'
 end
