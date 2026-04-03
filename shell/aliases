@@ -18,3 +18,4 @@ alias v.="v ."
 alias cat=bat
 alias k=kubectl
 alias j=jira
+alias lj=lazyjira
