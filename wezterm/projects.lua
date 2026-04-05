@@ -2,7 +2,7 @@ local wezterm = require('wezterm')
 local module = {}
 
 local home = wezterm.home_dir
-local project_dir = home .. "/code"
+local project_dir = home .. '/code'
 
 local function project_dirs()
   local projects = {
@@ -23,19 +23,24 @@ function module.choose_project()
     table.insert(choices, { label = value })
   end
 
-  return wezterm.action.InputSelector {
-    title = "Projects",
+  return wezterm.action.InputSelector({
+    title = 'Projects',
     choices = choices,
     fuzzy = true,
-    action = wezterm.action_callback(function(child_window, child_pane, id, label)
-      if not label then return end
+    action = wezterm.action_callback(function(child_window, child_pane, _, label)
+      if not label then
+        return
+      end
 
-      child_window:perform_action(wezterm.action.SwitchToWorkspace {
-        name = label:match("([^/]+)$"),
-        spawn = { cwd = label },
-      }, child_pane)
+      child_window:perform_action(
+        wezterm.action.SwitchToWorkspace({
+          name = label:match('([^/]+)$'),
+          spawn = { cwd = label },
+        }),
+        child_pane
+      )
     end),
-  }
+  })
 end
 
 return module
