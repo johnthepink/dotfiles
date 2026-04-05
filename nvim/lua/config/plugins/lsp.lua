@@ -41,8 +41,6 @@ function M.config()
 
   local nls = require('config/plugins/null-ls')
   nls.setup()
-
-  vim.lsp.inlay_hint.enable(true)
 end
 
 return M
