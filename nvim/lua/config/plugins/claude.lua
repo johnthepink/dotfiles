@@ -3,6 +3,7 @@ return {
   dependencies = { 'folke/snacks.nvim' },
   config = true,
   opts = {
+    focus_after_send = true,
     terminal = {
       provider = 'snacks',
       snacks_win_opts = {
