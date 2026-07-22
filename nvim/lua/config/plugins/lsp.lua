@@ -38,6 +38,8 @@ function M.config()
   enable('gopls')
   -- brew install golangci-lint golangci-lint-langserver
   enable('golangci_lint_ls')
+  -- brew install ty
+  enable('ty')
 
   local nls = require('config/plugins/null-ls')
   nls.setup()
