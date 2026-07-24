@@ -34,8 +34,6 @@ export PATH="$(yarn global bin):$PATH"
 
 export PATH="/Users/john/Library/Android/sdk/platform-tools:$PATH"
 
-export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
-
 export PATH="/opt/webOS_Signage_SDK/CLI/bin:$PATH"
 
 export PATH="/Users/john/tizen-studio/tools:$PATH"
