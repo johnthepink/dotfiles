@@ -40,6 +40,8 @@ function M.config()
   enable('golangci_lint_ls')
   -- brew install ty
   enable('ty')
+  -- npm i -g brighterscript
+  enable('bright_script')
 
   local nls = require('config/plugins/null-ls')
   nls.setup()
