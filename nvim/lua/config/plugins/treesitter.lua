@@ -7,6 +7,7 @@ return {
   opts = {
     languages = {
       'bash',
+      'brightscript',
       'css',
       'dockerfile',
       'embedded_template',
