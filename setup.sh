@@ -33,6 +33,9 @@ ln -sf ~/.dotfiles/gnupg/gpg.conf ~/.gnupg/gpg.conf
 echo "installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo "installing jetbrains mono nerd font"
+brew install font-jetbrains-mono-nerd-font
+
 echo "installing zsh plugins"
 brew install zsh-fast-syntax-highlighting zsh-autosuggestions
 
