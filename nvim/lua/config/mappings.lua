@@ -20,26 +20,17 @@ map('n', '<C-j>', smart_splits.move_cursor_down)
 map('n', '<C-k>', smart_splits.move_cursor_up)
 map('n', '<C-l>', smart_splits.move_cursor_right)
 
+map('n', '<C-t>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 -- run all rails tests in new tmux pane
-map(
-  'n',
-  '<leader>qq',
-  "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- zsh -c 'bin/rails test; read; wezterm cli activate-pane --pane-id '$WEZTERM_PANE<cr>"
-)
+map('n', '<leader>qq', "<cmd>silent !tmux neww zsh -c 'bin/rails test; read'<cr>")
 -- run current buffer rails tests
 map('n', '<leader>qf', function()
   local path = vim.fn.expand('%:p')
-  return "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- zsh -c 'bin/rails test "
-      .. path
-      .. "; read; wezterm cli activate-pane --pane-id '$WEZTERM_PANE<cr>"
+  return "<cmd>silent !tmux neww zsh -c 'bin/rails test " .. path .. "; read'<cr>"
 end, { expr = true })
 -- run current buffer rails test at cursor position
 map('n', '<leader>ql', function()
   local path = vim.fn.expand('%:p')
   local position = vim.fn.getcurpos()[2]
-  return "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- zsh -c 'bin/rails test "
-      .. path
-      .. ':'
-      .. position
-      .. "; read; wezterm cli activate-pane --pane-id '$WEZTERM_PANE<cr>"
+  return "<cmd>silent !tmux neww zsh -c 'bin/rails test " .. path .. ':' .. position .. "; read'<cr>"
 end, { expr = true })
