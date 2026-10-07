@@ -22,6 +22,15 @@ symbol = " "
 [conda]
 symbol = " "
 
+[custom.git_worktree]
+require_repo = true
+when = '[ "$(git rev-parse --path-format=absolute --git-dir)" != "$(git rev-parse --path-format=absolute --git-common-dir)" ]'
+command = 'basename "$(git rev-parse --show-toplevel)"'
+format = '[$symbol$output]($style) '
+symbol = "󰙅 "
+style = "bold blue"
+shell = ["sh"]
+
 [dart]
 symbol = " "
 
