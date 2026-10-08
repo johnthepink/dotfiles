@@ -1,9 +1,13 @@
 return {
   'nvim-tree/nvim-web-devicons',
   {
-    'mrjones2014/smart-splits.nvim',
+    'smart-splits-nvim/smart-splits.nvim',
     opts = {
-      at_edge = 'stop',
+      mux = { backend = 'smart-splits-backend-tmux' },
+      move = { at_edge = 'stop' },
+    },
+    dependencies = {
+      { 'smart-splits-nvim/backend-tmux', main = 'smart-splits-backend-tmux' },
     },
   },
   {
