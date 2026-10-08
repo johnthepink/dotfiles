@@ -1,0 +1,15 @@
+post_create:
+  - echo "DATABASE_SUFFIX=_$WM_HANDLE" >> .env && bin/rails db:prepare
+  - bin/rake graphql:schema:idl && yarn graphql-codegen
+
+pre_remove:
+  - if grep -q '^DATABASE_SUFFIX=' .env; then bin/rails db:drop; fi
+  - "<cleanup-node-modules>"
+
+files:
+  copy:
+    - .env
+  symlink:
+    - node_modules
+    - .husky/_
+    - config/credentials
