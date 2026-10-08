@@ -21,6 +21,8 @@ ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/workmux ~/.config/workmux
 ln -sf ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -sf ~/.dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
+mkdir -p ~/Library/Application\ Support/lazyjira
+ln -sf ~/.dotfiles/lazyjira/config.yml ~/Library/Application\ Support/lazyjira/config.yml
 ln -sf ~/.dotfiles/bin ~/bin
 ln -sf ~/.dotfiles/shell/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/shell/zshrc ~/.zshrc

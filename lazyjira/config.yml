@@ -1,0 +1,12 @@
+issueTabs:
+  - name: Sprint
+    jql: project = {{.ProjectKey}} AND assignee = currentUser() AND Sprint in openSprints() AND statusCategory != Done ORDER BY priority DESC, status ASC
+  - name: All
+    jql: project = {{.ProjectKey}} AND statusCategory != Done ORDER BY updated DESC
+  - name: Assigned
+    jql: project = {{.ProjectKey}} AND assignee=currentUser() AND statusCategory != Done ORDER BY priority DESC, updated DESC
+customCommands:
+  - key: "b"
+    name: "workmux worktree"
+    command: "workmux add {{.Key}}-{{.Summary | slugify}} || { echo 'workmux failed, press enter'; read _; }"
+    contexts: [issues, detail]
