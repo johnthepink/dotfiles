@@ -34,3 +34,7 @@ function jcy() {
   jira issue list -a $(jira me) -s 'In Progress' --paginate 1 --plain --no-headers --columns KEY | tr -d '\n' | pbcopy
   echo $(pbpaste)
 }
+
+function wr() {
+  workmux add -b "review-$1" -p "/code-review $1"
+}
