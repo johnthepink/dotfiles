@@ -36,5 +36,5 @@ function jcy() {
 }
 
 function wr() {
-  workmux add -b "review-$1" -p "/code-review $1"
+  workmux add --pr "$1" --name "review-$1" -b -p "/code-review $1"
 }
