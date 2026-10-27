@@ -1,0 +1,11 @@
+post_create:
+  - yarn
+  - yarn player:build
+
+pre_remove:
+  - "<cleanup-node-modules>"
+
+files:
+  symlink:
+    - .yarn/cache
+    - schema.graphql
