@@ -6,7 +6,7 @@ issueTabs:
   - name: Assigned
     jql: project = {{.ProjectKey}} AND assignee=currentUser() AND statusCategory != Done ORDER BY priority DESC, updated DESC
 customCommands:
-  - key: "b"
+  - key: "B"
     name: "workmux worktree"
-    command: "workmux add {{.Key}}-{{.Summary | slugify}} || { echo 'workmux failed, press enter'; read _; }"
+    command: "workmux add {{.Key}} || { echo 'workmux failed, press enter'; read _; }"
     contexts: [issues, detail]
