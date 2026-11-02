@@ -7,9 +7,7 @@ return {
     terminal = {
       provider = 'snacks',
       snacks_win_opts = {
-        position = 'bottom',
-        height = 0.4,
-        width = 1.0,
+        position = 'right',
         border = 'single',
         wo = { winbar = '' },
       },
