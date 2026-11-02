@@ -1,4 +1,5 @@
 post_create:
+  - bundle install
   - echo "DATABASE_SUFFIX=_$WM_HANDLE" >> .env && bin/rails db:prepare
   - bin/rake 'devices:extra[2,100]'
   - bin/rake graphql:schema:idl && yarn graphql-codegen
