@@ -1,7 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24" },
   "backend-tmux": { "branch": "master", "commit": "9e9e6aa9b3eb7a8d3896a993611622ac97abff52" },
-  "claudecode.nvim": { "branch": "main", "commit": "b92e7ac37d6dee4d0a6e7ea1d7a012aa8946d049" },
+  "claudecode.nvim": { "branch": "main", "commit": "a4d814d3b1ea127d6bff41df0dd00be52c94450c" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },
   "cmp-cmdline": { "branch": "main", "commit": "d126061b624e0af6c3a556428712dd4d4194ec6d" },
   "cmp-npm": { "branch": "main", "commit": "2337f109f51a09297596dd6b538b70ccba92b4e4" },
